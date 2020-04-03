@@ -1,0 +1,19 @@
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav mode="side" [(opened)]="open" mode="side" (opened)="onOpen()" (closed)="onClose()">
+    <app-side-menu></app-side-menu>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-menu  [sideMenuState]="open" (togleSideMenu)="onSideMenuToggle($event)"></app-menu>
+    <div class="router-outlet-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

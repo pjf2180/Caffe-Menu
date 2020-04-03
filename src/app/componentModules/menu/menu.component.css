@@ -1,0 +1,10 @@
+@media(min-width: 768px){
+    .tool-bar-button{
+        visibility: hidden;
+    }
+}
+
+.tool-bar{
+    display: flex;
+    justify-content: space-between;
+}

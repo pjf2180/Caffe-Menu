@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  menuGroupVm: MenuGroup[];
+  constructor(private sideBarService: SidebarService) {
+    this.menuGroupVm = sideBarService.menu;
   }
 
+  ngOnInit() {
+    console.log(this.menuGroupVm);
+  }
+  
 }

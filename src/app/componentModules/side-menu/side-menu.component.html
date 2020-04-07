@@ -1,4 +1,29 @@
 <div class="menu-container">
-    <mat-toolbar color="primary">My App</mat-toolbar>
-    
+    <div class="groups-container">
+        <mat-toolbar color="primary">My App</mat-toolbar>
+        <div class="menu-group-container">
+
+            <div *ngFor="let group of menuGroupVm" class="group-container">
+                <mat-list>
+                    <mat-list-item>
+                        <p class="group-heading">{{group.title}}</p>
+                    </mat-list-item>
+                </mat-list>
+
+                <mat-nav-list>
+                    <a mat-list-item color="primary" *ngFor="let menuItem of group.links"
+                        [routerLink]="[menuItem.route]" routerLinkActive="link-active">
+
+                        <div mat-line>{{menuItem.label}}</div>
+                    </a>
+                </mat-nav-list>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-toolbar">
+        <p>mini-toolbar</p>
+    </div>
 </div>

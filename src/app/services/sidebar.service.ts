@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-
+import * as fromDashboardRouting from '../dashboard/dashboard-routing.module'
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
 
-  menu: MenuItem[] = [
+  menu: MenuGroup[] = [
     {
       title: 'Home',
       icon: 'mdi mdi-gauge',
       links: [
-        { label: 'Dashboard', route: '/dashboard' },
-        { label: 'ProgressBar', route: '/progress' },
-        { label: 'Estadisticas', route: '/graficas1' },
-        { label: 'Promesas', route: '/promises' },
-        { label: 'Rxjs', route: '/rxjs' },
+        { label: 'Image Finder', route: fromDashboardRouting.imageFinderPath },
+        { label: 'Favorites', route: fromDashboardRouting.imageFavoritesPath },
       ]
     }
   ]
   constructor() { }
 }
-export interface MenuItem {
+export interface MenuGroup {
   title: string;
   icon: string;
   links: {

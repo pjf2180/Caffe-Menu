@@ -1,3 +1,26 @@
 .menu-container{
+    height: 100%;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+.group-heading{
+    font-weight: bold;
+}
+.link-active{
+    border-left: 3px solid !important;    
+}
+.menu-item-link{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+
+}
+.bottom-toolbar{
+  align-self: center;
 }

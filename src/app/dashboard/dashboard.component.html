@@ -1,4 +1,4 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="example-container" [class.example-is-mobile]="mobileQuery.matches">
 
   <mat-sidenav mode="side" [(opened)]="open" mode="side" (opened)="onOpen()" (closed)="onClose()">
     <app-side-menu></app-side-menu>

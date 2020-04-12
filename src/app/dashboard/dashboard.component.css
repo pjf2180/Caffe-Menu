@@ -1,6 +1,8 @@
 
 .router-outlet-container{
+  position: relative;
   padding: 1rem;
+  
 }
 .example-container {
   display: flex;

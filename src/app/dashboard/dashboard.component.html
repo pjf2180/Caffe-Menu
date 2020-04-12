@@ -1,12 +1,14 @@
+<!-- Structural component -->
 <mat-sidenav-container class="example-container" [class.example-is-mobile]="mobileQuery.matches">
 
-  <mat-sidenav mode="side" [(opened)]="open" mode="side" (opened)="onOpen()" (closed)="onClose()">
+  <!-- Side content -->
+  <mat-sidenav mode="side" [(opened)]="open" (opened)="onOpen()" (closed)="onClose()">
     <app-side-menu></app-side-menu>
-
   </mat-sidenav>
 
+  <!-- Main content -->
   <mat-sidenav-content>
-    <app-menu  [sideMenuState]="open" (togleSideMenu)="onSideMenuToggle($event)"></app-menu>
+    <app-menu [sideMenuState]="open" (togleSideMenu)="onSideMenuToggle($event)"></app-menu>
     <div class="router-outlet-container">
       <router-outlet></router-outlet>
     </div>

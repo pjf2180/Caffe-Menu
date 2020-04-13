@@ -1,3 +1,23 @@
-.text-container{
-    text-align: justify;
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* justify-content: space-around;
+    align-content: flex-start; */
+}
+.card-container app-content-card .image-container:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.card-content{
+    max-width: 400px;
+}
+.card-container .image-container{
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
+}
+.card-container .image-container img{
+   width: 100%;
 }

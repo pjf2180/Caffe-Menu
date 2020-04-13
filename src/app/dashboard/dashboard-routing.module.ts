@@ -5,7 +5,7 @@ import { ImageFavoritesComponent } from '../pageModules/image-favorites/image-fa
 import { DashboardComponent } from './dashboard.component';
 
 export const main_path = 'dashboard'
-export const imageFinderPath = 'imageFinder';
+export const imageFinderPath = 'imageViewer';
 export const imageFavoritesPath = 'imageFavorites';
 
 const routes: Routes = [

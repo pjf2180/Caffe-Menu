@@ -6,6 +6,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ImageFavoritesModule } from '../pageModules/image-favorites/image-favorites.module';
 import { ImageViewerModule } from '../pageModules/image-viewer/image-viewer.module';
 import { SharedModule } from '../shared/shared.module';
+import { TasksModule } from '../pageModules/tasks/tasks.module';
 
 
 
@@ -18,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
     MenuModule,
     // Eager loading modules
     ImageViewerModule,
-    ImageFavoritesModule
+    ImageFavoritesModule,
+    TasksModule
   ],
   exports: [ DashboardComponent]
 })

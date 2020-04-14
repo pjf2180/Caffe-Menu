@@ -1,0 +1,11 @@
+.card-column-container{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card-column{
+    flex: 1;
+    min-width: 300px;
+}

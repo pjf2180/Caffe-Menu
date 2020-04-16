@@ -1,11 +1,36 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 .card-column-container{
     display: flex;
     justify-content: center;
-    justify-content: space-around;
+    max-width: 2000px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .card-column{
     flex: 1;
     min-width: 300px;
+    /* width: 100%; */
+    height: fit-content;
+    /* justify-content: center; */
 }
+app-content-card {
+    /* display: flex; */
+    justify-content: center;
+}
+mat-card{
+    background-color: tomato;
+    height: 80px;
+    margin: 0.5rem;
+    
+}
+.task-categories{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+

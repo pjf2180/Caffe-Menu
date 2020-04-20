@@ -8,6 +8,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -21,7 +23,8 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatCardModule,
     MatListModule,
-    
+    MatInputModule,
+    MatGridListModule
     
   ],
   exports: [
@@ -33,6 +36,8 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatCardModule,
     MatListModule,
+    MatInputModule,
+    MatGridListModule
     
   ]
 })

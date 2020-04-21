@@ -3,5 +3,6 @@
     height: 100%;
 }
 .heading-container{
+    margin-bottom: 1rem;
     border-bottom: rgb(109, 109, 109) 1px solid;
 }

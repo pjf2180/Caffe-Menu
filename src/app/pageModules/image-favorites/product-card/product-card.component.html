@@ -1,34 +1,46 @@
 <div class="overview">
-    <div class="overview-img">
-        <img [src]="viewModel.imageUrl" alt="">
-    </div>
-    <div class="overview-info">
-        <mat-card-header>
-            <mat-chip-list aria-label="Fish selection">
-                <mat-chip color="accent" selected>Accent fish</mat-chip>
-                <mat-chip>One fish</mat-chip>
-                <mat-chip>Two fish</mat-chip>
-                <mat-chip color="primary" selected>Primary fish</mat-chip>
-              </mat-chip-list>
-            <mat-card-title>{{ viewModel.name }}</mat-card-title>
-            <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>
-            
-        </mat-card-header>
-        <div class="description-container">
-            <mat-card-content>
-                <p>{{ viewModel.description }}</p>
-                <app-star-rating rating="3"></app-star-rating>
-                <h6 class="stock-tag">
-                    {{ viewModel.stockQty }} in stock
-                </h6>
-                <h5 class="price-tag">
-                    ${{ viewModel.price }}
-                </h5>
-                <mat-chip-list aria-label="Fish selection">
-                    <mat-chip color="accent" selected>Available</mat-chip>
-                  </mat-chip-list>
-            </mat-card-content>
+    <div class="row">
+
+        <div class="col col-lg-3 col-md-5 col-sm-12 col-12 overview-img">
+            <img [src]="viewModel.imageUrl" alt="">
+        </div>
+
+        <div class="col col-lg-9 col-md-7 col-sm-12 col-12 ">
+            <mat-card-header>
+                <mat-card-title>{{ viewModel.name }}</mat-card-title>
+                <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>
+
+            </mat-card-header>
+                    
+            <div class="description-container">
+                <mat-card-content>
+                    <div class="attributes-container">
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip color="accent" selected>Accent fish</mat-chip>
+                            <mat-chip>One fish</mat-chip>
+                            <mat-chip>Two fish</mat-chip>
+                            <mat-chip color="primary" selected>Primary fish</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                    <p>{{ viewModel.description }}</p>
+                    <app-star-rating rating="3"></app-star-rating>
+                    <h6 class="stock-tag">
+                        {{ viewModel.stockQty }} in stock
+                    </h6>
+                    <h5 class="price-tag">
+                        ${{ viewModel.price }}
+                    </h5>
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip color="accent" selected>Available</mat-chip>
+                    </mat-chip-list>
+                </mat-card-content>
+            </div>
         </div>
     </div>
+    <!-- <div class="overview-img">
+    </div>
+    <div class="overview-info">
+        
+    </div> -->
 
 </div>

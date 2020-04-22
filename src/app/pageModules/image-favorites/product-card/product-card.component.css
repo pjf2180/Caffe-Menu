@@ -2,15 +2,22 @@
     display: flex;
 }
 .overview-img{
+    background-color: greenyellow;
+    margin-bottom: 30px;
+    display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 .overview-img img{
-    width: 300px;
+    width: 280px;
     height: 250px;
     border-radius: 4px;
-
+    display: block;
+    
 }
 .description-container{
     padding-left: 1rem;
+}
+.attributes-container {
+    margin-bottom: 1rem;
 }

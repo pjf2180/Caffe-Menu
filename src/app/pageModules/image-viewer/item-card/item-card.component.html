@@ -5,7 +5,7 @@
         <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <img class="item-image" [src]="viewModel.imageUrl" alt="Photo of a Shiba Inu">
+        <img mat-card-image [src]="viewModel.imageUrl" alt="Photo of a Shiba Inu">
         <app-star-rating [rating]="viewModel.rating"></app-star-rating>
         <p>{{ viewModel.description }}</p>
         <h5 class="price-tag">

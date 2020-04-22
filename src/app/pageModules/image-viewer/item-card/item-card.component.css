@@ -1,7 +1,10 @@
 .example-card {
-    max-width: 400px;
+    /* max-width: 400px; */
+    margin-top: 2rem;
 }
-  
+img{
+    max-height: 250px;
+}
 .item-image {
     width: 250px;
     height: 250px;

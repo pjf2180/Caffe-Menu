@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
   declarations: [],
   imports: [
@@ -24,7 +24,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatListModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule
     
   ],
   exports: [
@@ -37,7 +38,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatListModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule
     
   ]
 })

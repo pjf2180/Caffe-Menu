@@ -2,10 +2,10 @@
     max-width: 400px;
 }
   
-/* .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-} */
+.item-image {
+    width: 250px;
+    height: 250px;
+}
 .price-tag{
     text-align: end;
     font-weight: bold;

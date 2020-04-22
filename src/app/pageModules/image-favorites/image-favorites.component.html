@@ -1,36 +1,12 @@
-<app-content-card title="Productos">
+<app-content-card title="Products">
+
+    <mat-card-actions>
+        <button mat-button>+</button>
+    </mat-card-actions>
 
 </app-content-card>
-<app-content-card>
-    <div class="overview">
-        <div class="overview-img">
-            <img [src]="viewModel.imageUrl" alt="">
-        </div>
-        <div class="overview-info">
-            <mat-card-header>
-               
-                <mat-card-title>{{ viewModel.name }}</mat-card-title>
-                <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>
-                
-            </mat-card-header>
-            <div class="description-container">
-                <mat-card-content>
-                    <p>{{ viewModel.description }}</p>
-                    <app-star-rating rating="3"></app-star-rating>
-                    <h6 class="stock-tag">
-                        {{ viewModel.stockQty }} en stock
-                    </h6>
-                    <h5 class="price-tag">
-                        ${{ viewModel.price }}
-                    </h5>
-                </mat-card-content>
-            </div>
-        </div>
- 
-    </div>
-    <!-- <mat-card-actions>
-        <button mat-button>Estadística</button>
-        <button mat-button>VENTA</button>
-    </mat-card-actions> -->
+
+<app-content-card *ngFor="let item of products">
+    <app-product-card [id]="item.id"></app-product-card>
 </app-content-card>
 

@@ -4,5 +4,12 @@
 }
 .heading-container{
     margin-bottom: 1rem;
-    border-bottom: rgb(109, 109, 109) 1px solid;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+:host ::ng-deep  mat-card-actions button{
+    font-size: 2rem;
 }

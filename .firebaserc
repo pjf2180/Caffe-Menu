@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "whereto-4882c": {
+      "hosting": {
+        "angular-boiler-plate": [
+          "whereto-4882c"
+        ]
+      }
+    }
+  }
+}

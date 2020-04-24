@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "angular-boiler-plate",
+      "public": "dist/angular-boiler-plate",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

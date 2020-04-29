@@ -1,12 +1,27 @@
 import { Injectable } from '@angular/core';
 import { ProductVm } from '../pageModules/image-favorites/product-card/productVm';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Product } from '../models/product.models';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
+
+
+  addProduct() { 
+    const product: Product = {
+      active: true,
+      attributes: ['vegan','non gmo'],
+      description: 'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.',
+      name: 'Shiba Inu',
+      notes: 'Dog Breed',
+      rating: 0,
+      stockQty:7
+    }
+    return this.firestore.collection('products').add(product)
+  }
 
   getProductList(): ProductVm[] {
     const products: ProductVm[] = [

@@ -5,6 +5,7 @@ import { ImageFavoritesComponent } from '../pageModules/image-favorites/image-fa
 import { DashboardComponent } from './dashboard.component';
 import { TasksComponent } from '../pageModules/tasks/tasks.component';
 
+
 export const main_path = 'dashboard'
 export const imageFinderPath = 'imageViewer';
 export const imageFavoritesPath = 'imageFavorites';

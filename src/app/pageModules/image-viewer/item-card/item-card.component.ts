@@ -19,7 +19,7 @@ export class ItemCardComponent implements OnInit {
       note: 'Dog Breed',
       imageUrl: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
       name: 'Shiba Inu',
-      price: '650',
+      price: 650,
       rating: 4.5,
       stockQty: 3
     }

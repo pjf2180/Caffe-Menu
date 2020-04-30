@@ -6,14 +6,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-boiler-plate';
-  constructor(public afa: AngularFireAuth) {
-
-  }
-  ngOnInit(): void {
-    console.log(this.afa.auth.currentUser);
-    
-  }
-  
 }

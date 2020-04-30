@@ -5,7 +5,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
         </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+        <input [(ngModel)]="credentials.username"  type="text" class="form-control" placeholder="Username" aria-label="Username"
             aria-describedby="basic-addon1">
     </div>
 
@@ -13,9 +13,9 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon2">Pass</span>
         </div>
-        <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+        <input [(ngModel)]="credentials.password" type="text" class="form-control" placeholder="Password" aria-label="Password"
             aria-describedby="basic-addon2">
     </div>
 
-    <button type="button" class="btn btn-primary">Primary</button>
+    <button (click)="signIn()" type="button" class="btn btn-primary">Primary</button>
 </div>

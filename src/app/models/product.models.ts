@@ -7,4 +7,11 @@ export interface Product extends IFireStoreCollectionItem{
     attributes: string[];
     rating: number;
     stockQty: number;
+    soldInCurrentMonth: number;
+    soldInYear: number;
+    available: boolean;
+    lastSaleDate: number;
+    imageUrl: string;
+    note: string;
+    price: number;
 }

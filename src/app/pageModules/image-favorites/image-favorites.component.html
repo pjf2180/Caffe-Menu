@@ -6,7 +6,7 @@
 
 </app-content-card>
 
-<app-content-card *ngFor="let item of products">
-    <app-product-card [id]="item.id"></app-product-card>
+<app-content-card *ngFor="let item of products$ | async">
+    <app-product-card [item]="item"></app-product-card>
 </app-content-card>
 

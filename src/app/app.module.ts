@@ -7,10 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FirebaseDbModule } from './db/firebase-db/firebase-db.module';
 
 
 
@@ -25,9 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    AngularFireAuthModule
+    FirebaseDbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

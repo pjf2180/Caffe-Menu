@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductVm } from './productVm';
+import { IProduct } from 'src/app/models/product.models';
 
 @Component({
   selector: 'app-product-card',
@@ -8,11 +8,14 @@ import { ProductVm } from './productVm';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input('item') viewModel: ProductVm;
+  @Input('item') viewModel: IProduct;
+  colorHierarchy = ['primary', 'accent']
   constructor() { }
 
   ngOnInit() {
-    console.log(this.viewModel);
+  }
+  getColor(i: number) {
+    return i > 1? this.colorHierarchy[i] : ''
   }
 
 }

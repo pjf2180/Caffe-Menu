@@ -6,9 +6,9 @@ import { FirebaseDbModule } from '../firebase-db.module';
 @Injectable({
     providedIn: FirebaseDbModule
 })
-export class ProductCollection<Product> extends GenericCollection<Product>{
+export class AdminProductCollection<AdminProduct> extends GenericCollection<AdminProduct>{
     constructor(protected firestore: AngularFirestore) {
         super(firestore);
-        this.setCollectionName('shoppingProducts');
+        this.setCollectionName('adminProducts');
     }
 }

@@ -16,10 +16,12 @@
                 <mat-card-content>
                     <div class="attributes-container">
                         <mat-chip-list aria-label="Fish selection">
-                            <mat-chip color="accent" selected>Accent fish</mat-chip>
-                            <mat-chip>One fish</mat-chip>
-                            <mat-chip>Two fish</mat-chip>
-                            <mat-chip color="primary" selected>Primary fish</mat-chip>
+                            <mat-chip 
+                            *ngFor="let attribute of viewModel.attributes; let i=index" 
+                            [color]="getColor(i)" selected>{{attribute}}</mat-chip>
+                            <!-- <mat-chip>One fish</mat-chip>
+                            <mat-chip>Two fish</mat-chip> -->
+                            <!-- <mat-chip color="primary" selected>Primary fish</mat-chip> -->
                         </mat-chip-list>
                     </div>
                     <p>{{ viewModel.description }}</p>

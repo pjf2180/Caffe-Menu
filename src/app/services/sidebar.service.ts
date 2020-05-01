@@ -11,8 +11,8 @@ export class SidebarService {
       icon: 'mdi mdi-gauge',
       links: [
         { label: 'Tasks', route: fromDashboardRouting.tasksPath },
-        { label: 'Image Finder', route: fromDashboardRouting.imageFinderPath },
-        { label: 'Favorites', route: fromDashboardRouting.imageFavoritesPath },
+        { label: 'Shop', route: fromDashboardRouting.imageFinderPath },
+        { label: 'Products', route: fromDashboardRouting.imageFavoritesPath },
       ]
     }
   ]

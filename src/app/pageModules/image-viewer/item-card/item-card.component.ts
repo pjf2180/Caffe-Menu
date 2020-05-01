@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ItemCardVm } from './item-card-Vm';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingProduct } from 'src/app/models/shopping-product';
 
 @Component({
   selector: 'app-item-card',
@@ -8,21 +8,12 @@ import { ItemCardVm } from './item-card-Vm';
 })
 export class ItemCardComponent implements OnInit {
 
-  viewModel: ItemCardVm;
+  @Input('product') viewModel: ShoppingProduct;
 
   constructor() { }
 
   ngOnInit() {
-    this.viewModel = {
-      id: 'Fake-UUID',
-      description: 'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-      note: 'Dog Breed',
-      imageUrl: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
-      name: 'Shiba Inu',
-      price: 650,
-      rating: 4.5,
-      stockQty: 3
-    }
+    console.log(this.viewModel)
   }
 
 }

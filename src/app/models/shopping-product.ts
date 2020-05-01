@@ -1,6 +1,6 @@
-import { IFireStoreCollectionItem } from '../db/firebase-db/firestoreCollection.firebase-db';
+import { IProduct } from './product.models';
 
-export interface IProduct extends IFireStoreCollectionItem {
+export class ShoppingProduct implements IProduct{
     name: string;
     attributes: string[];
     note: string;
@@ -9,6 +9,7 @@ export interface IProduct extends IFireStoreCollectionItem {
     rating: number;
     imageUrl: string;
     available: boolean;
+    uuid?: string;
+    active: boolean;
+
 }
-
-

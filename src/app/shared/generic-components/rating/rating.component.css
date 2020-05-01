@@ -1,0 +1,11 @@
+.top-star-container{
+    width: fit-content;
+    height: 2rem;
+}
+.top-star-container button{
+    padding: 1px 1px;
+    outline: none;
+    background: none;
+    border: none;
+    height: 1.5rem;
+}

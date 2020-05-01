@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ImageViewerComponent } from '../pageModules/image-viewer/image-viewer.component';
+import { ImageViewerComponent } from '../pageModules/shopping-products/image-viewer.component';
 import { ImageFavoritesComponent } from '../pageModules/image-favorites/image-favorites.component';
 import { DashboardComponent } from './dashboard.component';
 import { TasksComponent } from '../pageModules/tasks/tasks.component';

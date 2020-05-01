@@ -1,0 +1,11 @@
+<div class="main-container">
+    <div class="top-star-container">
+        <button
+        *ngFor="let star of stars; let i = index"
+         style="color: white;"
+         (click)="starClicked(i)">
+            <i [ngClass]="{'far': rating <= i,'fas': rating > i }" 
+                class="fa-star fa-2x" ></i>
+        </button>
+    </div>
+</div>

@@ -25,7 +25,7 @@
                         </mat-chip-list>
                     </div>
                     <p>{{ viewModel.description }}</p>
-                    <app-star-rating rating="3"></app-star-rating>
+                    <app-star-rating [enabled]="false" [rating]="viewModel.rating"></app-star-rating>
                     <h6 class="stock-tag">
                         {{ viewModel.stockQty }} in stock
                     </h6>

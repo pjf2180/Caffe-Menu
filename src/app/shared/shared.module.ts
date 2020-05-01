@@ -6,7 +6,7 @@ import { FaInputComponent } from './generic-components/fa-input/fa-input.compone
 import { InputRefDirective } from './generic-components/fa-input/input-ref-directive.directive';
 import { GridItemComponent } from './generic-components/grid-item/grid-item.component';
 import { GridComponent } from './generic-components/grid/grid.component';
-import { StarRatingComponent } from '../pageModules/image-viewer/star-rating/star-rating.component';
+import { RatingComponent } from './generic-components/rating/rating.component';
 
 
 
@@ -18,7 +18,7 @@ import { StarRatingComponent } from '../pageModules/image-viewer/star-rating/sta
      InputRefDirective,
      GridItemComponent,
      GridComponent,
-     StarRatingComponent
+     RatingComponent
     ],
   imports: [
     CommonModule,
@@ -32,7 +32,7 @@ import { StarRatingComponent } from '../pageModules/image-viewer/star-rating/sta
     InputRefDirective,
     GridItemComponent,
     GridComponent,
-    StarRatingComponent
+    RatingComponent
   ]
 })
 export class SharedModule { }

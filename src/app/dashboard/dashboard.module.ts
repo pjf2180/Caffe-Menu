@@ -4,7 +4,7 @@ import { SideMenuModule } from './dashboard-components/side-menu/side-menu.modul
 import { MenuModule } from './dashboard-components/menu/menu.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ImageFavoritesModule } from '../pageModules/image-favorites/image-favorites.module';
-import { ImageViewerModule } from '../pageModules/image-viewer/image-viewer.module';
+import { ImageViewerModule } from '../pageModules/shopping-products/image-viewer.module';
 import { SharedModule } from '../shared/shared.module';
 import { TasksModule } from '../pageModules/tasks/tasks.module';
 

@@ -1,9 +1,9 @@
 .example-card {
-    /* max-width: 400px; */
+    max-width: 3500px;
     margin-top: 2rem;
 }
 img{
-    max-height: 250px;
+    /* max-width: 80%; */
 }
 .item-image {
     width: 250px;
@@ -13,4 +13,22 @@ img{
     text-align: end;
     font-weight: bold;
 }
-  
+mat-card-content{
+    margin-top: 2rem;
+}
+mat-card-content .image-container{
+    display: flex;
+    justify-content: center;
+    max-height: 200px;
+    /* 
+    max-width: 250px; */
+}
+mat-card-content .image-container img{
+   border-radius: 5px;
+}
+
+
+mat-card-actions{
+    display: flex;
+    justify-content: flex-end;
+}

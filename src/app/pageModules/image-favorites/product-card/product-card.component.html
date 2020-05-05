@@ -1,11 +1,16 @@
 <div class="overview">
+    <div class="row actions-container">
+        <button mat-button color="accent">Add stock</button>
+        <button mat-button color="accent">Edit</button>
+        <button mat-button color="accent">Disable</button>
+    </div>
     <div class="row">
 
-        <div class="col col-lg-3 col-md-5 col-sm-12 col-12 overview-img">
-            <img [src]="viewModel.imageUrl" alt="">
+        <div class="col col-lg-4 col-md-5 col-sm-12 col-12 overview-img"
+        [ngStyle]="{'background-image':  'url(https://source.unsplash.com/random)' }">
         </div>
 
-        <div class="col col-lg-9 col-md-7 col-sm-12 col-12 ">
+        <div class="col col-lg-8 col-md-7 col-sm-12 col-12 ">
             <mat-card-header>
                 <mat-card-title>{{ viewModel.name }}</mat-card-title>
                 <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>

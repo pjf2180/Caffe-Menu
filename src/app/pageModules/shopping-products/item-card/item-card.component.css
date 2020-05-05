@@ -26,6 +26,14 @@ mat-card-content .image-container{
 mat-card-content .image-container img{
    border-radius: 5px;
 }
+.mat-card-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+.price-tag{
+
+}
 
 
 mat-card-actions{

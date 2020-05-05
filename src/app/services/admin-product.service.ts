@@ -3,8 +3,9 @@ import { ProductCollection } from '../db/firebase-db/collections/products.collec
 import { IAdminProduct } from '../models/admin-product.models';
 import { AdminProductCollection } from '../db/firebase-db/collections/admin-product.collections';
 import { IProduct } from '../models/product.models';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { ShoppingProduct } from '../models/shopping-product';
+import { TransformFunction } from '../db/firebase-db/genericCollection';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,12 @@ export class AdminProductService {
     ])
 
   }
-
+  addStockToProduct(productId: string, increment: number) {
+    return this.adminProductCol.runTransaction((docData) => {
+      return {
+        stockQty: docData.stockQty + increment
+      }
+    }, this.adminProductCol.getDocRef(productId))
+  }
 }
+

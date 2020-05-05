@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ImageFavoritesComponent } from './image-favorites.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ProductCardComponent } from './product-card/product-card.component';
-
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
-  declarations: [ImageFavoritesComponent,ProductCardComponent],
+  declarations: [ImageFavoritesComponent],
   imports: [
-    SharedModule
+    SharedModule,
+    ComponentsModule
   ]
 })
 export class ImageFavoritesModule { }

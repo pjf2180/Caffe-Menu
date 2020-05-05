@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingProductService } from 'src/app/services/product.service';
 import { Observable, pipe } from 'rxjs';
-import { IProduct } from 'src/app/models/product.models';
 import { AdminProductService } from 'src/app/services/admin-product.service';
 import { IAdminProduct } from 'src/app/models/admin-product.models';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-image-favorites',
@@ -19,7 +16,6 @@ export class ImageFavoritesComponent implements OnInit {
   constructor(private adminProductService: AdminProductService) { }
 
   ngOnInit() {
-    console.log('On init')
     this.products$ = this.adminProductService.getAdminProducts();
   }
 
@@ -37,7 +33,6 @@ export class ImageFavoritesComponent implements OnInit {
     }
     this.adminProductService.addAdminProduct(adminProduct)
       .then((ref) => {
-        console.log('All good');
       }).catch(err => console.log(err)).finally(() => console.log('All done'))
   }
   addStockQty(event: { productId: string, quantity: number }) {

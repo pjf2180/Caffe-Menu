@@ -17,7 +17,7 @@ export class ProductCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.viewModel)
+    // console.log(this.viewModel)
   }
   getColor(i: number) {
     return i > 1 ? this.colorHierarchy[i] : ''

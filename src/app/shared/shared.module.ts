@@ -10,7 +10,6 @@ import { RatingComponent } from './generic-components/rating/rating.component';
 
 
 
-
 @NgModule({
   declarations: [
     ContentCardComponent,
@@ -22,7 +21,7 @@ import { RatingComponent } from './generic-components/rating/rating.component';
     ],
   imports: [
     CommonModule,
-    AngularMaterialComponentsModule,
+    AngularMaterialComponentsModule
   ],
   exports: [
     CommonModule,

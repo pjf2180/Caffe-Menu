@@ -7,8 +7,8 @@ import { FirebaseDbModule } from '../firebase-db.module';
     providedIn: FirebaseDbModule
 })
 export class AdminProductCollection<AdminProduct> extends GenericCollection<AdminProduct>{
-    constructor(protected firestore: AngularFirestore) {
-        super(firestore);
+    constructor(protected afs: AngularFirestore) {
+        super(afs);
         this.setCollectionName('adminProducts');
     }
 }

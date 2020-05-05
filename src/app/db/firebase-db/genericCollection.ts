@@ -1,17 +1,19 @@
 import { IFirestoreCollection, IFireStoreCollectionItem } from './firestoreCollection.firebase-db';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 
+
+export type TransformFunction = (docData: firebase.firestore.DocumentData) => firebase.firestore.UpdateData
+
 export class GenericCollection<T> implements IFirestoreCollection<T>{
 
     protected collectionName: string;
     public collectionReference: AngularFirestoreCollection<T>;
-    protected instance: GenericCollection<T>;
 
-    constructor(protected firestore: AngularFirestore) {
+    constructor(protected afs: AngularFirestore) {
 
     }
     add(item: IFireStoreCollectionItem) {
-        return this.firestore.collection(this.collectionName).add(item);
+        return this.afs.collection(this.collectionName).add(item);
     }
     update(item: IFireStoreCollectionItem, changes: any) {
         return this.collectionReference.doc(`${item.uuid}`)
@@ -23,7 +25,7 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         return this.collectionReference.valueChanges()
     }
     batch() {
-        return this.firestore.firestore.batch()
+        return this.afs.firestore.batch()
     }
     addBatch(arr: { docRef: DocumentReference, item: any }[]) {
         const batch = this.batch()
@@ -32,13 +34,28 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         })
         return batch.commit();
     }
+    runTransaction(transformFunction: TransformFunction, docRef: DocumentReference) {
+        let transaction = this.afs.firestore.runTransaction(t => {
+            return t.get(docRef)
+                .then(doc => {
+                    let newDocument = transformFunction(doc.data())
+                    t.update(docRef, newDocument);
+                })
+        })
+        return transaction;
+    }
+    getDocRef(uuid: string): DocumentReference {
+        return this.collectionReference.doc<T>(uuid).ref;
+    }
     newDocRef(): DocumentReference {
-        const uuid = this.firestore.createId();
+        const uuid = this.afs.createId();
         return this.collectionReference.doc<T>(uuid).ref;
     }
     protected setCollectionName(name: string) {
         this.collectionName = name;
-        this.collectionReference = this.firestore.collection<T>(this.collectionName);
+        this.collectionReference = this.afs.collection<T>(this.collectionName);
     }
+
 }
+
 

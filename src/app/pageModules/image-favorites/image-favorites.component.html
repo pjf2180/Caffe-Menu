@@ -7,6 +7,6 @@
 </app-content-card>
 
 <app-content-card *ngFor="let item of products$ | async">
-    <app-product-card [item]="item"></app-product-card>
+    <app-product-card [item]="item" (onStockAdded)="addStockQty($event)"></app-product-card>
 </app-content-card>
 

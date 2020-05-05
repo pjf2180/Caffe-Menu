@@ -1,5 +1,7 @@
 import { IFirestoreCollection, IFireStoreCollectionItem } from './firestoreCollection.firebase-db';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
+import { take, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 export type TransformFunction = (docData: firebase.firestore.DocumentData) => firebase.firestore.UpdateData
@@ -16,13 +18,22 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         return this.afs.collection(this.collectionName).add(item);
     }
     update(item: IFireStoreCollectionItem, changes: any) {
-        return this.collectionReference.doc(`${item.uuid}`)
+        return this.collectionReference.doc(`${item.id}`)
     }
     remove(uuid: string) {
         this.collectionReference.doc(`${uuid}`).update({ active: false });
     }
     get() {
-        return this.collectionReference.valueChanges()
+        return this.collectionReference.snapshotChanges()
+            .pipe(map(snapshotChanges => {
+                const documents = snapshotChanges.map(snap => {
+                    return {
+                        ...snap.payload.doc.data(),
+                        id: snap.payload.doc.id
+                    }
+                })
+                return documents;
+            }))
     }
     batch() {
         return this.afs.firestore.batch()

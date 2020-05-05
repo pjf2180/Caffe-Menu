@@ -9,7 +9,7 @@ export class ShoppingProduct implements IProduct{
     rating: number;
     imageUrl: string;
     available: boolean;
-    uuid?: string;
+    id?: string;
     active: boolean;
 
 }

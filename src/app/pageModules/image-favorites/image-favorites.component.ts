@@ -21,11 +21,6 @@ export class ImageFavoritesComponent implements OnInit {
   ngOnInit() {
     console.log('On init')
     this.products$ = this.adminProductService.getAdminProducts();
-    this.products$
-      .pipe(take(1))
-      .subscribe(ps => {
-        this.firstProduct = ps[0];
-      })
   }
 
   onAddClick() {
@@ -46,7 +41,6 @@ export class ImageFavoritesComponent implements OnInit {
       }).catch(err => console.log(err)).finally(() => console.log('All done'))
   }
   addStockQty(event: { productId: string, quantity: number }) {
-    console.log(event);
     this.adminProductService.addStockToProduct(event.productId, event.quantity)
       .then(() => console.log('succes adding stock')).catch(e => console.log(e));
   }

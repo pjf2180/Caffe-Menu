@@ -17,16 +17,16 @@ export class ProductCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.viewModel)
   }
   getColor(i: number) {
     return i > 1 ? this.colorHierarchy[i] : ''
   }
   onAddStockClick(quantity: number) {
     const d = {
-      productId: this.viewModel.uuid,
+      productId: this.viewModel.id,
       quantity
     };
-    console.log(d);
     this.onStockAdded.emit(d);
   }
   onDisableClick() {

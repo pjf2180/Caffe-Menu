@@ -1,7 +1,6 @@
 import { IFirestoreCollection, IFireStoreCollectionItem } from './firestoreCollection.firebase-db';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
-import { take, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 export type TransformFunction<T> = (docData: T) => firebase.firestore.UpdateData
@@ -14,11 +13,11 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     constructor(protected afs: AngularFirestore) {
 
     }
-    add(item: IFireStoreCollectionItem) {
+    add(item: T) {
         return this.afs.collection(this.collectionName).add(item);
     }
-    update(item: IFireStoreCollectionItem, changes: any) {
-        return this.collectionReference.doc(`${item.id}`)
+    update(item: T) {
+        return this.collectionReference.doc(`${ (item as unknown as IFireStoreCollectionItem).id}`).set(item)
     }
     remove(uuid: string) {
         this.collectionReference.doc(`${uuid}`).update({ active: false });

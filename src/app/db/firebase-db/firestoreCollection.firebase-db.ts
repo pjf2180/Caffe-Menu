@@ -4,8 +4,8 @@ export interface IFireStoreCollectionItem {
     active: boolean;
 }
 export interface IFirestoreCollection<T> {
-    add(item: IFireStoreCollectionItem);
-    update(item: IFireStoreCollectionItem, changes: any);
+    add(item: T);
+    update(item: T);
     remove(id: string);
     get(id: string);
 }

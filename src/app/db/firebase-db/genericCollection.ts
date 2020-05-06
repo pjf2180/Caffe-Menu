@@ -4,7 +4,7 @@ import { take, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 
-export type TransformFunction = (docData: firebase.firestore.DocumentData) => firebase.firestore.UpdateData
+export type TransformFunction<T> = (docData: T) => firebase.firestore.UpdateData
 
 export class GenericCollection<T> implements IFirestoreCollection<T>{
 
@@ -45,11 +45,11 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         })
         return batch.commit();
     }
-    runTransaction(transformFunction: TransformFunction, docRef: DocumentReference) {
+    runTransaction(transformFunction: TransformFunction<T>, docRef: DocumentReference) {
         let transaction = this.afs.firestore.runTransaction(t => {
             return t.get(docRef)
                 .then(doc => {
-                    let newDocument = transformFunction(doc.data())
+                    let newDocument = transformFunction(doc.data() as T)
                     t.update(docRef, newDocument);
                 })
         })

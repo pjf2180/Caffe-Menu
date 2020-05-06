@@ -43,7 +43,7 @@ export class AdminProductService {
   }
   togleActiveProp(productId: string) {
     return this.adminProductCol
-      .runTransaction((docData) => ({ active: !docData.active }), this.adminProductCol.getDocRef(productId));
+      .runTransaction((docData) => ({ available: !docData.available }), this.adminProductCol.getDocRef(productId));
   }
   editAdminProduct(product: IAdminProduct){
     return this.adminProductCol.update(product)

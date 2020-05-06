@@ -39,5 +39,10 @@ export class ImageFavoritesComponent implements OnInit {
     this.adminProductService.addStockToProduct(event.productId, event.quantity)
       .then(() => console.log('succes adding stock')).catch(e => console.log(e));
   }
+  togleActive(event) {
+   this.adminProductService.togleActiveProp(event)
+   .then(()=>console.log('Toggle succesful'))
+   .catch(e=> console.error(e));
+  }
 
 }

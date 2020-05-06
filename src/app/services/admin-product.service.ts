@@ -5,7 +5,6 @@ import { AdminProductCollection } from '../db/firebase-db/collections/admin-prod
 import { IProduct } from '../models/product.models';
 import { Observable } from 'rxjs';
 import { ShoppingProduct } from '../models/shopping-product';
-import { TransformFunction } from '../db/firebase-db/genericCollection';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +31,6 @@ export class AdminProductService {
       this.adminProductCol.newDocRef();
     const shoppingProductRef = this.productCol.newDocRef();
 
-    console.log(adminProduct);
-    // const newItemRef = this.adminProductCol
     return this.adminProductCol.addBatch([
       { docRef: adminProductRef, item: adminProduct },
       { docRef: shoppingProductRef, item: shoppingProduct }
@@ -41,11 +38,15 @@ export class AdminProductService {
 
   }
   addStockToProduct(productId: string, increment: number) {
-    return this.adminProductCol.runTransaction((docData) => {
-      return {
-        stockQty: docData.stockQty + increment
-      }
-    }, this.adminProductCol.getDocRef(productId))
+    return this.adminProductCol
+      .runTransaction((docData)=> ({stockQty: docData.stockQty + increment}),this.adminProductCol.getDocRef(productId));
+  }
+  togleActiveProp(productId: string) {
+    return this.adminProductCol
+      .runTransaction((docData) => ({ active: !docData.active }), this.adminProductCol.getDocRef(productId));
+  }
+  editAdminProduct(product: IAdminProduct){
+    return this.adminProductCol.update(product)
   }
 }
 

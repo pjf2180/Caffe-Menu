@@ -1,15 +1,14 @@
 <app-content-card title="Products">
-
     <mat-card-actions>
         <button (click)="onAddClick()" mat-button>+</button>
     </mat-card-actions>
-
 </app-content-card>
 
 <app-content-card *ngFor="let item of products$ | async">
     <app-product-card 
     [item]="item" 
     (onStockAdded)="addStockQty($event)"
-    (activeTogle)="togleActive($event)"></app-product-card>
+    (activeTogle)="togleActive($event)"
+    (onEdit)="edit($event)"></app-product-card>
 </app-content-card>
 

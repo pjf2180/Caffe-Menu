@@ -12,7 +12,7 @@ export class SidebarService {
       links: [
         { label: 'Tasks', route: fromDashboardRouting.tasksPath },
         { label: 'Shop', route: fromDashboardRouting.imageFinderPath },
-        { label: 'Products', route: fromDashboardRouting.imageFavoritesPath },
+        { label: 'Products', route: '/' + fromDashboardRouting.imageFavoritesPath },
       ]
     }
   ]

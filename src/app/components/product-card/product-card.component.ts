@@ -14,6 +14,7 @@ export class ProductCardComponent implements OnInit {
   @Input('item') viewModel: IAdminProduct;
   @Output() onStockAdded: EventEmitter<{ productId: string, quantity: number }> = new EventEmitter<{ productId: string, quantity: number }>();
   @Output('activeTogle') onTogleActiveProp: EventEmitter<string> = new EventEmitter< string>();
+  @Output() onEdit: EventEmitter<string> = new EventEmitter<string>();
   colorHierarchy = ['primary', 'accent']
   constructor() { }
 
@@ -32,6 +33,9 @@ export class ProductCardComponent implements OnInit {
   }
   onTogleActive() {
     this.onTogleActiveProp.emit(this.viewModel.id)
+  }
+  onEditClick(){
+    this.onEdit.emit(this.viewModel.id)
   }
 
 }

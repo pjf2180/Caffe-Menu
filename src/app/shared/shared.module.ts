@@ -7,6 +7,7 @@ import { InputRefDirective } from './generic-components/fa-input/input-ref-direc
 import { GridItemComponent } from './generic-components/grid-item/grid-item.component';
 import { GridComponent } from './generic-components/grid/grid.component';
 import { RatingComponent } from './generic-components/rating/rating.component';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { RatingComponent } from './generic-components/rating/rating.component';
     ],
   imports: [
     CommonModule,
-    AngularMaterialComponentsModule
+    AngularMaterialComponentsModule,
+    ReactiveFormsModule,FormsModule
   ],
   exports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { RatingComponent } from './generic-components/rating/rating.component';
     InputRefDirective,
     GridItemComponent,
     GridComponent,
-    RatingComponent
+    RatingComponent,
+    ReactiveFormsModule,FormsModule
   ]
 })
 export class SharedModule { }

@@ -1,15 +1,14 @@
 import { IProduct } from './product.models';
 
-export class ShoppingProduct implements IProduct{
-    name: string;
-    attributes: string[];
-    note: string;
+export interface ShoppingProduct extends IProduct {
     price: number;
-    description: string;
     rating: number;
     imageUrl: string;
     available: boolean;
-    id?: string;
     active: boolean;
-
+    id?: string;
+    attributes: string[];
+    description: string;
+    name: string;
+    note: string;
 }

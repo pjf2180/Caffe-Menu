@@ -20,13 +20,23 @@ export class AdminProductService {
   }
   addAdminProduct(shoppingProduct: ShoppingProduct) {
 
+    console.log(shoppingProduct);
     const adminProduct: IAdminProduct = {
-      ...shoppingProduct,
+      active: true,
+      attributes:shoppingProduct.attributes,
+      available: true,
+      description: shoppingProduct.description,
+      imageUrl: 'http://source.unsplash.com/random',
+      name: shoppingProduct.name,
+      note: shoppingProduct.note,
+      price: shoppingProduct.price,
       soldInCurrentMonth: 0,
       soldInYear: 0,
-      stockQty: 0
-    }
+      stockQty: 0,
+      rating: 0,
 
+    }
+    console.log(adminProduct);
     const adminProductRef =
       this.adminProductCol.newDocRef();
     const shoppingProductRef = this.productCol.newDocRef();

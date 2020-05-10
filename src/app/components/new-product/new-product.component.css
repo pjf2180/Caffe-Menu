@@ -1,0 +1,42 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .attributes{
+    margin-top: 2rem;
+  }
+  .picture-select{
+    height: 100px;
+    width: 100px;
+    border: 2px dotted white;
+  }
+  .picture-select:hover{
+    background-color: rgba(245, 245, 245, 0.212);
+    cursor: pointer;
+  }
+  .picture-selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .selected-attributes{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  }

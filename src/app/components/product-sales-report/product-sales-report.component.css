@@ -1,0 +1,19 @@
+.report{
+    display: flex;
+    margin: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.322);
+    padding-bottom: 3rem;
+}
+
+.image{
+    border-radius: 5px;
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+}
+.info{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

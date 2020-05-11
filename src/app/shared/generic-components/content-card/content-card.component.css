@@ -5,6 +5,7 @@
     overflow: hidden;
 }
 
+
 @media(max-width: 375px){
     .mat-card{
         margin: 0.5rem;
@@ -20,4 +21,8 @@
 
 :host ::ng-deep  mat-card-actions button{
     font-size: 2rem;
+}
+
+:host ::ng-deep  mat-card-actions {
+    margin-right: 0;
 }

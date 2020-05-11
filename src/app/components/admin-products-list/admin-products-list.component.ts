@@ -4,7 +4,7 @@ import { IAdminProduct } from 'src/app/models/admin-product.models';
 import { AdminProductService } from 'src/app/services/admin-product.service';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
 import { Router } from '@angular/router';
-import { imageFavoritesPath } from 'src/app/dashboard/dashboard-routing.module';
+import { adminProductsPath } from 'src/app/dashboard/dashboard-routing.module';
 
 @Component({
   selector: 'app-admin-products-list',
@@ -23,7 +23,7 @@ export class AdminProductsListComponent implements OnInit {
   }
 
   onAddClick() {
-    this.router.navigate([imageFavoritesPath, 'new'])
+    this.router.navigate([adminProductsPath, 'new'])
     // const adminProduct: ShoppingProduct = {
     //   active: true,
     //   attributes: ['vegan', 'non gmo'],
@@ -50,7 +50,7 @@ export class AdminProductsListComponent implements OnInit {
   }
   edit(event) {
     console.log(event)
-    this.router.navigate([imageFavoritesPath, 'edit', event])
+    this.router.navigate([adminProductsPath, 'edit', event])
   }
 
 

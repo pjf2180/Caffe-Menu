@@ -24,7 +24,7 @@
 }
 .menu-container{
     height: 100%;
-    width: 200px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -34,7 +34,7 @@
     font-weight: bold;
 }
 .link-active{
-    border-left: 3px solid !important;    
+    border-left: 4px #ffd740 solid !important;    
 }
 .menu-item-link{
     cursor: pointer;

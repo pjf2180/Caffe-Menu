@@ -7,19 +7,18 @@ import { TasksComponent } from '../pageModules/tasks/tasks.component';
 
 export const main_path = ''
 export const imageFinderPath = 'imageViewer';
-export const imageFavoritesPath = 'adminProducts';
-export const tasksPath = 'tasks';
+export const adminProductsPath = 'adminProducts';
+export const overviewPath = 'overview';
 
 const routes: Routes = [
   {
     path: main_path, component: DashboardComponent,
     children: [
-      { path: tasksPath, component: TasksComponent, },
-      { path: imageFinderPath, component: ImageViewerComponent },
-      { path: imageFavoritesPath, loadChildren: () => 
+      { path: overviewPath, component: TasksComponent, },
+      { path: adminProductsPath, loadChildren: () => 
         import('../pageModules/admin-products/admin-products.module').then(m => m.AdminProductsModule) 
       },
-      { path: '', redirectTo: imageFavoritesPath, pathMatch: 'full' }
+      { path: '', redirectTo: adminProductsPath, pathMatch: 'full' }
     ]
   },
 ];

@@ -8,14 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FirebaseDbModule } from './db/firebase-db/firebase-db.module';
-import { AdminProductsComponent } from './pageModules/admin-products/admin-products.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

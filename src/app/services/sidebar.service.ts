@@ -10,9 +10,8 @@ export class SidebarService {
       title: 'Home',
       icon: 'mdi mdi-gauge',
       links: [
-        { label: 'Tasks', route: fromDashboardRouting.tasksPath },
-        { label: 'Shop', route: fromDashboardRouting.imageFinderPath },
-        { label: 'Products', route: '/' + fromDashboardRouting.imageFavoritesPath },
+        { label: 'Tasks', route: '/' + fromDashboardRouting.overviewPath },
+        { label: 'Products', route: '/' + fromDashboardRouting.adminProductsPath },
       ]
     }
   ]

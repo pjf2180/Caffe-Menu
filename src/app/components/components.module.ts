@@ -5,6 +5,10 @@ import { SharedModule } from '../shared/shared.module';
 import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsListComponent } from './admin-products-list/admin-products-list.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { BestSellersComponent } from './best-sellers/best-sellers.component';
+import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail.component';
+import { SalesReportComponent } from './sales-report/sales-report.component';
+import { ProductSalesReportComponent } from './product-sales-report/product-sales-report.component';
 
 
 @NgModule({
@@ -14,6 +18,10 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     NewProductComponent,
     AdminProductsListComponent,
     EditProductComponent,
+    BestSellersComponent,
+    ProductThumbnailComponent,
+    SalesReportComponent,
+    ProductSalesReportComponent,
   ],
   imports: [
     SharedModule
@@ -22,6 +30,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     ItemCardComponent, 
     ProductCardComponent, 
     NewProductComponent,
-    AdminProductsListComponent]
+    AdminProductsListComponent,
+    BestSellersComponent,
+    SalesReportComponent
+  ]
 })
 export class ComponentsModule { }

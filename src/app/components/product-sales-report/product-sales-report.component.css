@@ -11,9 +11,19 @@
     width: 200px;
     height: 200px;
 }
-.info{
-    margin: 1rem;
+.insights{
+    margin-left: 1rem;
     display: flex;
+    justify-content: space-between;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
+}
+
+.insights app-indicator{
+    border-right: 1px solid #3333334f;
+
+}
+.insights app-indicator:last-child{
+    border-right: none;
 }

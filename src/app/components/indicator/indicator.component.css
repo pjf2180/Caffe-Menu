@@ -1,0 +1,21 @@
+.indicator-container{
+    height: 100%;
+    width: 300px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.label-container{
+    text-align: center;
+    flex: 2
+}
+.score-container{
+    flex: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score-container h6{
+    font-size: 40px;
+}

@@ -1,11 +1,7 @@
 <div class="report">
     <div class="image"></div>
-    <div class="info">
-        <h6>Product name</h6>
-        <h6>Total Revenue</h6>
-        <h6>Sold Amount</h6>
-        <h6>Units sold:</h6>
-        <h6>Order avg. qty:</h6>
+    <div class="insights">
+       <app-indicator *ngFor="let insight of insights" [label]="insight.label" [score]="insight.score"></app-indicator>
     </div>
 </div>
 <br>

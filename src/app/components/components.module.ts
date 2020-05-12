@@ -9,6 +9,7 @@ import { BestSellersComponent } from './best-sellers/best-sellers.component';
 import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail.component';
 import { SalesReportComponent } from './sales-report/sales-report.component';
 import { ProductSalesReportComponent } from './product-sales-report/product-sales-report.component';
+import { IndicatorComponent } from './indicator/indicator.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProductSalesReportComponent } from './product-sales-report/product-sale
     ProductThumbnailComponent,
     SalesReportComponent,
     ProductSalesReportComponent,
+    IndicatorComponent,
   ],
   imports: [
     SharedModule
@@ -32,7 +34,8 @@ import { ProductSalesReportComponent } from './product-sales-report/product-sale
     NewProductComponent,
     AdminProductsListComponent,
     BestSellersComponent,
-    SalesReportComponent
+    SalesReportComponent,
+    IndicatorComponent
   ]
 })
 export class ComponentsModule { }

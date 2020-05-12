@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-sales-report',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductSalesReportComponent implements OnInit {
 
+  @Input() insights: any;
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

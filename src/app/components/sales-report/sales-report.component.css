@@ -1,0 +1,7 @@
+
+.report-container {
+    border-bottom: 0.5px solid gray;
+}
+.reports .report-container:last-child{
+    border-bottom: none;
+}

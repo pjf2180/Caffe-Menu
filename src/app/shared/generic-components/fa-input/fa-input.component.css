@@ -11,6 +11,7 @@
 
 i{
   color: gray;
+  margin-right: 0.5rem;
 }
   
 :host ::ng-deep  input {

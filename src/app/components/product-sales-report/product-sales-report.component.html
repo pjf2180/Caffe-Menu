@@ -1,5 +1,5 @@
-<div class="report">
-    <div class="image"></div>
+<div class="report-row">
+    <app-image-thumbnail></app-image-thumbnail>
     <div class="insights">
        <app-indicator *ngFor="let insight of insights" [label]="insight.label" [score]="insight.score"></app-indicator>
     </div>

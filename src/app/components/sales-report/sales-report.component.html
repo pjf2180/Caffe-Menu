@@ -3,7 +3,10 @@
         <input inputRef type="text" placeholder="Search any product">
     </app-fa-input>
 
-    <app-product-sales-report *ngFor="let report of reports" [insights]=report.insights>
-    </app-product-sales-report>
+    <div class="reports">
+        <div class="report-container" *ngFor="let report of reports">
+            <app-product-sales-report  [insights]=report.insights></app-product-sales-report>
+        </div>
+    </div>
 
 </app-content-card>

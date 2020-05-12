@@ -10,6 +10,7 @@ import { ProductThumbnailComponent } from './product-thumbnail/product-thumbnail
 import { SalesReportComponent } from './sales-report/sales-report.component';
 import { ProductSalesReportComponent } from './product-sales-report/product-sales-report.component';
 import { IndicatorComponent } from './indicator/indicator.component';
+import { ImageThumbnailComponent } from './image-thumbnail/image-thumbnail.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { IndicatorComponent } from './indicator/indicator.component';
     SalesReportComponent,
     ProductSalesReportComponent,
     IndicatorComponent,
+    ImageThumbnailComponent,
   ],
   imports: [
     SharedModule

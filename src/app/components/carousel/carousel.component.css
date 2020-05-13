@@ -1,0 +1,19 @@
+.carousel{
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+  
+::ng-deep .carousel app-carousel-item{
+    margin: 1rem;
+    cursor: pointer;
+    
+}
+::ng-deep .carousel app-carousel-item:hover{
+    transform: scale(1.08);
+    transition: 0.45s;
+}

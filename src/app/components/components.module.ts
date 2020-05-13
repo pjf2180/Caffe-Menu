@@ -11,6 +11,8 @@ import { SalesReportComponent } from './sales-report/sales-report.component';
 import { ProductSalesReportComponent } from './product-sales-report/product-sales-report.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { ImageThumbnailComponent } from './image-thumbnail/image-thumbnail.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { ImageThumbnailComponent } from './image-thumbnail/image-thumbnail.compo
     ProductSalesReportComponent,
     IndicatorComponent,
     ImageThumbnailComponent,
+    CarouselComponent,
+    CarouselItemComponent,
   ],
   imports: [
     SharedModule

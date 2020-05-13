@@ -9,11 +9,11 @@
 @media(max-width: 375px){
     .mat-card{
         margin: 0.5rem;
+        padding-top: 1rem;
     }
 }
 .heading-container{
     margin-bottom: 1rem;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,4 +1,3 @@
-.thumbnail-container{
-    display: flex;
-    justify-content: space-between;
+app-content-card{
+    padding: 2rem
 }

@@ -1,15 +1,13 @@
 .thumbnail{
-    border: 0.3px solid black;
     padding: 0.5rem;
     border-radius: 5px;
     width: 300px;
     display: flex;
 }
 .image{
-    border-radius: 6px;
-    background-color: tomato;
+    width: 80px;
     height: 80px;
-    flex: 1
+
 }
 .name-container{
     flex: 2;

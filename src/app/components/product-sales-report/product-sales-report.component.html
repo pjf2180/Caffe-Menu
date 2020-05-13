@@ -1,7 +1,13 @@
 <div class="report-row">
-    <app-image-thumbnail></app-image-thumbnail>
-    <div class="insights">
-       <app-indicator *ngFor="let insight of insights" [label]="insight.label" [score]="insight.score"></app-indicator>
+    <div class="container-fluid">   
+        <div class="row">
+            <div class="thumbnail col-12">
+                <app-image-thumbnail></app-image-thumbnail>
+            </div> 
+            <div class="insights col-12">
+               <app-indicator *ngFor="let insight of insights" [label]="insight.label" [score]="insight.score"></app-indicator>
+            </div>
+        </div>
     </div>
 </div>
 <br>

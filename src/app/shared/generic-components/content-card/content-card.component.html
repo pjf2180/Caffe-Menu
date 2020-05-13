@@ -1,7 +1,9 @@
 <mat-card>
-    <div class="heading-container">
+    <div class="container-fluid heading-container">
         <h4 *ngIf="title">{{title}}</h4>
         <ng-content select="mat-card-actions" ></ng-content>
     </div>
+    <!-- <div class="heading-container">
+    </div> -->
     <ng-content></ng-content>
 </mat-card>

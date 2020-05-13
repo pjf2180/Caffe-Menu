@@ -1,7 +1,7 @@
 .mat-card{
     margin: 1rem;
     height: 100%;
-    padding: 0.5rem;
+    padding: 0rem;
     overflow: hidden;
 }
 
@@ -9,14 +9,14 @@
 @media(max-width: 375px){
     .mat-card{
         margin: 0.5rem;
-        padding-top: 1rem;
+       
     }
 }
 .heading-container{
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 1rem;
 }
 
 :host ::ng-deep  mat-card-actions button{

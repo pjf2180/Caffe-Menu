@@ -1,0 +1,25 @@
+.goal-container{
+    padding-bottom: 0.5rem;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+.button{
+    height: 10px !important;
+}
+.current-score{
+    font-size: larger;
+}
+.goal-score{
+    font-size: smaller;
+}
+.goal-name{
+    font-size: x-small;
+}
+.progress-tags p {
+    font-size: smaller;
+    font-weight: 300;
+}

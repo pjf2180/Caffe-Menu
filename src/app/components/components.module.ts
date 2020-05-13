@@ -13,6 +13,8 @@ import { IndicatorComponent } from './indicator/indicator.component';
 import { ImageThumbnailComponent } from './image-thumbnail/image-thumbnail.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.component';
+import { SalesSummaryComponent } from './sales-summary/sales-summary.component';
+import { GoalComponent } from './goal/goal.component';
 
 
 @NgModule({
@@ -30,6 +32,9 @@ import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.co
     ImageThumbnailComponent,
     CarouselComponent,
     CarouselItemComponent,
+    SalesSummaryComponent,
+    GoalComponent,
+
   ],
   imports: [
     SharedModule
@@ -41,7 +46,8 @@ import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.co
     AdminProductsListComponent,
     BestSellersComponent,
     SalesReportComponent,
-    IndicatorComponent
+    IndicatorComponent,
+    SalesSummaryComponent
   ]
 })
 export class ComponentsModule { }

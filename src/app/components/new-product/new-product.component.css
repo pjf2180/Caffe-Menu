@@ -18,10 +18,10 @@
   .picture-select{
     height: 100px;
     width: 100px;
-    border: 2px dotted white;
+    border: 2px dotted rgb(7, 0, 0);
   }
   .picture-select:hover{
-    background-color: rgba(245, 245, 245, 0.212);
+    background-color: rgba(19, 1, 1, 0.068);
     cursor: pointer;
   }
   .picture-selector{
@@ -39,4 +39,8 @@
     display: flex;
     width: 50%;
     flex-direction: column;
+  }
+
+  .back-button{
+    font-size: 1rem;
   }

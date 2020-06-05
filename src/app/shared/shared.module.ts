@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     ContentCardComponent,
@@ -34,7 +35,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
     GridItemComponent,
     GridComponent,
     RatingComponent,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

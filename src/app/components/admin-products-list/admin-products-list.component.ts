@@ -2,10 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IAdminProduct } from 'src/app/models/admin-product.models';
 import { AdminProductService } from 'src/app/services/admin-product.service';
-import { ShoppingProduct } from 'src/app/models/shopping-product';
 import { Router } from '@angular/router';
 import { adminProductsPath } from 'src/app/dashboard/dashboard-routing.module';
+import { MatDialog } from '@angular/material/dialog';
+import { AddStockComponent } from '../add-stock/add-stock.component';
 
+export interface AddStockRequest {
+  product: IAdminProduct;
+  stockToAdd?: number;
+}
 @Component({
   selector: 'app-admin-products-list',
   templateUrl: './admin-products-list.component.html',
@@ -15,33 +20,39 @@ export class AdminProductsListComponent implements OnInit {
 
   products$: Observable<IAdminProduct[]>;
   firstProduct: IAdminProduct;
-  constructor(private adminProductService: AdminProductService, private router: Router) { }
+  constructor(public dialog: MatDialog, private adminProductService: AdminProductService, private router: Router) { }
 
   ngOnInit() {
     console.log('On init')
     this.products$ = this.adminProductService.getAdminProducts();
   }
 
+  openStockDialog(addStockRequest) {
+
+    const dialogRef = this.dialog.open(AddStockComponent, {
+      width: '250px',
+      data: addStockRequest
+    });
+    return dialogRef.afterClosed().toPromise();
+  }
+
   onAddClick() {
     this.router.navigate([adminProductsPath, 'new'])
-    // const adminProduct: ShoppingProduct = {
-    //   active: true,
-    //   attributes: ['vegan', 'non gmo'],
-    //   description: 'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.',
-    //   name: 'Shiba Inu',
-    //   note: 'Dog Breed',
-    //   rating: 0,
-    //   available: true,
-    //   imageUrl: 'https://source.unsplash.com/random',
-    //   price: 650
-    // }
-    // this.adminProductService.addAdminProduct(adminProduct)
-    //   .then((ref) => {
-    //   }).catch(err => console.log(err)).finally(() => console.log('All done'))
   }
-  addStockQty(event: { productId: string, quantity: number }) {
-    this.adminProductService.addStockToProduct(event.productId, event.quantity)
-      .then(() => console.log('succes adding stock')).catch(e => console.log(e));
+  addStockQty(product: IAdminProduct) {
+    const addStockRequest: AddStockRequest = {
+      product
+    };
+
+    this.openStockDialog(addStockRequest)
+      .then(result => {
+        const dialogResult: AddStockRequest = result;
+        console.log(dialogResult);
+        if (dialogResult) {
+          this.adminProductService.addStockToProduct(dialogResult.product.id, dialogResult.stockToAdd)
+            .then(() => console.log('succes adding stock')).catch(e => console.log(e));
+        }
+      });
   }
   togleActive(event) {
     this.adminProductService.togleActiveProp(event)

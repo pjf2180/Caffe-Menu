@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -27,8 +29,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatInputModule,
     MatGridListModule,
     MatChipsModule,
-    MatProgressBarModule
-    
+    MatProgressBarModule,
+    MatDialogModule
   ],
   exports: [
     MatSidenavModule,
@@ -42,8 +44,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatInputModule,
     MatGridListModule,
     MatChipsModule,
-    MatProgressBarModule
-    
+    MatProgressBarModule,
+    MatDialogModule
   ]
 })
 export class AngularMaterialComponentsModule { }

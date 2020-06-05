@@ -15,6 +15,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.component';
 import { SalesSummaryComponent } from './sales-summary/sales-summary.component';
 import { GoalComponent } from './goal/goal.component';
+import { AddStockComponent } from './add-stock/add-stock.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { GoalComponent } from './goal/goal.component';
     CarouselItemComponent,
     SalesSummaryComponent,
     GoalComponent,
+    AddStockComponent,
 
   ],
   imports: [

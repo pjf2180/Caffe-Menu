@@ -3,7 +3,7 @@
         <h4 *ngIf="title">{{title}}</h4>
         <ng-content select="mat-card-actions" ></ng-content>
     </div>
-    <!-- <div class="heading-container">
-    </div> -->
-    <ng-content></ng-content>
+    <div class="card-content" >
+        <ng-content></ng-content>
+    </div>
 </mat-card>

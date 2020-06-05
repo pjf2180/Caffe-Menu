@@ -3,6 +3,9 @@
     max-width: 500px;
     width: 100%;
   }
+.form-container{
+  padding: 1rem;
+}
   
   .example-full-width {
     width: 100%;

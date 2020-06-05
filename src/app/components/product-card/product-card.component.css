@@ -20,7 +20,7 @@
 }
 
 
-.overview-img{
+.img-container{
     min-height: 250px;
     border-radius: 5px;
     background-size: cover;
@@ -29,8 +29,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-left: 0.5rem;
+    margin-right: 0.5rem; */
 }
-.overview-img img{
+.img-container img{
     width: 280px;
     height: 250px;
     border-radius: 4px;

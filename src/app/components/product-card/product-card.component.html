@@ -6,11 +6,14 @@
     </div>
     <div class="row">
 
-        <div class="col col-lg-4 col-md-5 col-sm-12 col-12 overview-img"
-        [ngStyle]="{'background-image':  'url(https://source.unsplash.com/random)' }">
+        <!-- Image column -->
+        <div class="col-12 col-md-6  img-container">
+
+        <img src="https://source.unsplash.com/random" alt="">
         </div>
 
-        <div class="info col col-lg-8 col-md-7 col-sm-12 col-12 ">
+        <!-- Product Info colum -->
+        <div class=" col-12 col-md-6 info">
             <mat-card-header>
                 <mat-card-title>{{ viewModel.name }}</mat-card-title>
                 <mat-card-subtitle>{{ viewModel.note }}</mat-card-subtitle>

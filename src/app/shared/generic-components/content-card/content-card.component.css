@@ -1,9 +1,9 @@
 .mat-card{
-    margin: 1rem;
+    margin: 1rem auto ;
     height: 100%;
     padding: 0rem;
     overflow: hidden;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 

@@ -1,9 +1,17 @@
 
 .router-outlet-container{
   position: relative;
-  padding-top: 0;
-  
+  /* padding-top: 0; */
+  padding: 0 1rem ;
 }
+@media(max-width:425px){
+
+  .router-outlet-container{
+    padding: 0 0.5rem ;
+  }
+
+}
+
 .example-container {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,11 @@
+.menu-container{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
 .mat-toolbar{
     position: -webkit-sticky;
     position: sticky;
@@ -22,19 +30,8 @@
 .menu-group-container{
     /* position: relative; */
 }
-.menu-container{
-    height: 100%;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-x: hidden;
-}
-@media(max-width: 400px){
-    .menu-container{
-        width: 250px;
-    }
-}
+
+
 .group-heading{
     font-weight: bold;
 }
@@ -52,4 +49,14 @@
 }
 .bottom-toolbar{
   align-self: center;
+}
+@media(min-width: 768px){
+    .menu-container{
+        width: 150px;
+    }
+}
+@media(min-width: 930px){
+    .menu-container{
+        width: 200px;
+    }
 }

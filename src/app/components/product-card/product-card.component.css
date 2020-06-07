@@ -1,5 +1,11 @@
 .overview{
-   padding: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+}
+.menu-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .actions-container{

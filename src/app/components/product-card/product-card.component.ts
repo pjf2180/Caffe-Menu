@@ -33,6 +33,7 @@ export class ProductCardComponent implements OnInit {
     this.onTogleActiveProp.emit(this.viewModel.id)
   }
   onEditClick() {
+    console.log('Hello world')
     this.onEdit.emit(this.viewModel.id)
   }
 

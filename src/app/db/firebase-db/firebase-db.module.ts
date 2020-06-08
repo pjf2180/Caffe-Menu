@@ -4,7 +4,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { ProductCollection } from './collections/products.collections';
 
 @NgModule({
   declarations: [],

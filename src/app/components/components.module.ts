@@ -16,6 +16,11 @@ import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.co
 import { SalesSummaryComponent } from './sales-summary/sales-summary.component';
 import { GoalComponent } from './goal/goal.component';
 import { AddStockComponent } from './add-stock/add-stock.component';
+import { ProductMenuComponent } from './product-menu/product-menu.component';
+import { MenuComponent } from './menu/menu.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 
 
 @NgModule({
@@ -36,6 +41,11 @@ import { AddStockComponent } from './add-stock/add-stock.component';
     SalesSummaryComponent,
     GoalComponent,
     AddStockComponent,
+    ProductMenuComponent,
+    MenuComponent,
+    CategoriesComponent,
+    ProductDetailComponent,
+    CategoryOverviewComponent,
 
   ],
   imports: [
@@ -49,7 +59,8 @@ import { AddStockComponent } from './add-stock/add-stock.component';
     BestSellersComponent,
     SalesReportComponent,
     IndicatorComponent,
-    SalesSummaryComponent
+    SalesSummaryComponent,
+    MenuComponent
   ]
 })
 export class ComponentsModule { }

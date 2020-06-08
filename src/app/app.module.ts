@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FirebaseDbModule } from './db/firebase-db/firebase-db.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -24,7 +25,8 @@ import { FirebaseDbModule } from './db/firebase-db/firebase-db.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    FirebaseDbModule
+    FirebaseDbModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

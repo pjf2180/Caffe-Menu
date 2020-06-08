@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 interface Credentials {
   username?: string;
   password?: string;
@@ -13,17 +14,27 @@ interface Credentials {
 export class LoginComponent implements OnInit {
 
   credentials: Credentials = {
-    username: 'pjf2180@me.com',
-    password: 'Robitussin123'
+    username: '',
+    password: '' 
   };
+  formGroup: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+    this.formGroup = new FormGroup({
+      username: new FormControl(this.credentials.username),
+      password: new FormControl(this.credentials.password)
+    })
+  }
 
   ngOnInit() {
-    this.signIn();
+    // this.signIn();
   }
   signIn() {
-    this.authService.login(this.credentials.username, this.credentials.password)
+
+    const userName = this.formGroup.value.username;
+    const password = this.formGroup.value.password;
+
+    this.authService.login(userName, password)
       .then(userCredential => {
         console.log(userCredential);
         this.router.navigate(['/'])

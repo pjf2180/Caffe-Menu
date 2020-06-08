@@ -12,8 +12,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-  onCatalogClick(){
-    this.router.navigate(['/','menu'])
-  }
+  
 
 }

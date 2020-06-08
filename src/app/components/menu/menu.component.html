@@ -1,14 +1,22 @@
 <div class="menu">
 
     <div class="left-group">
-        <mat-icon class="main-icon">local_cafe</mat-icon>
-        <ng-content select="nav-btns"></ng-content>
-        <button mat-raised-button color="accent" (click)="onCatalogClick()">Menu</button>
-
+        <button mat-icon-button>
+            <mat-icon class="main-icon">local_cafe</mat-icon>
+        </button>
+        <ng-content select="button"></ng-content>
     </div>
+
     <div class="right-group">
-        <mat-icon >search</mat-icon>
-        <mat-icon class="menu-icon" >menu</mat-icon>
+        <button mat-icon-button>
+
+            <mat-icon>search</mat-icon>
+        </button>
+
+        <button mat-icon-button  aria-label="Example icon-button with a menu">
+            <mat-icon class="menu-icon">menu</mat-icon>
+        </button>
+       
     </div>
 
 </div>

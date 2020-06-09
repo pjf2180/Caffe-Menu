@@ -1,1 +1,19 @@
-<p>product-detail works!</p>
+<div *ngIf="viewModel">
+    <img class="product-image"
+        src="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242"
+        alt="">
+    <div class="info">
+        <h4>{{viewModel.name}}</h4>
+        <div class="description">
+            {{viewModel.description}}
+        </div>
+        <div class="attributes">
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip color="primary" *ngFor="let attribute of viewModel.attributes">{{attribute}}</mat-chip>
+
+            </mat-chip-list>
+        </div>
+    </div>
+
+    <button class="add-to-cart-btn" mat-flat-button color="accent">Add to order</button>
+</div>

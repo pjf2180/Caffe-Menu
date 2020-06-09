@@ -1,0 +1,26 @@
+<div class="example-container"  [class.example-is-mobile]="!mobileQuery.matches">
+
+  <app-menu [sideMenuState]="open" (togleSideMenu)="onSideMenuToggle($event)"></app-menu>
+
+  <!-- Structural component -->
+  <mat-sidenav-container class="example-sidenav-container">
+
+    <!-- Side content -->
+    <mat-sidenav [(mode)]="matSideNavMode" [(opened)]="open" (opened)="onOpen()" (closed)="onClose()">
+      <app-side-menu></app-side-menu>
+    </mat-sidenav>
+
+    <!-- Main content -->
+    <mat-sidenav-content>
+      <div class="router-outlet-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+        Use of this source code is governed by an MIT-style license that
+        can be found in the LICENSE file at http://angular.io/license -->

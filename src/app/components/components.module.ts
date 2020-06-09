@@ -21,6 +21,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { CategoryOverviewComponent } from './category-overview/category-overview
     CategoriesComponent,
     ProductDetailComponent,
     CategoryOverviewComponent,
+    SideMenuComponent
 
   ],
   imports: [
@@ -60,7 +62,8 @@ import { CategoryOverviewComponent } from './category-overview/category-overview
     SalesReportComponent,
     IndicatorComponent,
     SalesSummaryComponent,
-    MenuComponent
+    MenuComponent,
+    SideMenuComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +8,14 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  @Input() sideMenuState: boolean;
+  @Output() togleSideMenu: EventEmitter<boolean> = new EventEmitter();
+  constructor() { }
 
   ngOnInit() {
+  }
+  requestSideMenuToggle(){
+    this.togleSideMenu.emit(!this.sideMenuState)
   }
   
 

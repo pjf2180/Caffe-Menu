@@ -8,6 +8,7 @@ import { GridItemComponent } from './generic-components/grid-item/grid-item.comp
 import { GridComponent } from './generic-components/grid/grid.component';
 import { RatingComponent } from './generic-components/rating/rating.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,7 +25,9 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AngularMaterialComponentsModule,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -36,7 +39,9 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
     GridComponent,
     RatingComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
+
   ]
 })
 export class SharedModule { }

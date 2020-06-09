@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProductCategory } from 'src/app/models/product-category.models';
 
 @Component({
   selector: 'app-category-overview',
@@ -8,12 +9,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CategoryOverviewComponent implements OnInit {
 
+  @Input() category: ProductCategory;
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.category)
   }
 
   onItemClick(itemId: string) {
-    this.router.navigate([itemId], { relativeTo: this.route })
+    console.log(itemId)
+    this.router.navigate([itemId||'noid'], { relativeTo: this.route })
   }
 }

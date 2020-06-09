@@ -5,7 +5,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 button:focus{
     outline: none;
 }
-
+button a{
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
 .divider{
     margin-top: 1.5rem;
     margin-bottom: 1rem;

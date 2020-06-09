@@ -1,12 +1,17 @@
 .sign-in-container{
-    padding: 2rem;
+    /* padding: 2rem; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .sign-in-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    padding: 2rem;
 }
   
 .example-full-width {
@@ -24,13 +29,29 @@ a{
 mat-toolbar{
     display: flex;
     justify-content: center;
+} 
+.register-invite{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+
 }
-.register-info{
+.register-info-section{
     background-color: gainsboro;
     padding: 2rem;
-    height: 280px;
-    width: 100%;
+    height: fit-content;
+    min-height: 220px;
+
+}
+.register-info button{
+    max-width: 300px;
 }
 p{
     margin-top: 2rem;
+}
+
+.register-btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

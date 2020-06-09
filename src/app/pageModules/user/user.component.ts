@@ -17,7 +17,6 @@ export class UserComponent implements OnInit, OnDestroy {
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
-    this.open = this.mobileQuery.matches;
     this.matSideNavMode = this.mobileQuery.matches ? 'side' : 'over';
     console.log(this.open);
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

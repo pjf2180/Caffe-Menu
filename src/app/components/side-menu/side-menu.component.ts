@@ -8,12 +8,12 @@ import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
 })
 export class SideMenuComponent implements OnInit {
   menuGroupVm: MenuGroup[];
-  constructor(private sideBarService: SidebarService) {
-    this.menuGroupVm = sideBarService.menu;
+  constructor(public sideBarService: SidebarService) {
+    this.menuGroupVm = sideBarService.userMenu;
   }
 
   ngOnInit() {
     console.log(this.menuGroupVm);
   }
-  
+
 }

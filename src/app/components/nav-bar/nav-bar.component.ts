@@ -2,11 +2,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css']
 })
-export class MenuComponent implements OnInit {
+export class NavBarComponent implements OnInit {
 
   @Input() sideMenuState: boolean;
   @Output() togleSideMenu: EventEmitter<boolean> = new EventEmitter();

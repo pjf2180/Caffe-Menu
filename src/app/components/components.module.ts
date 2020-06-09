@@ -17,7 +17,7 @@ import { SalesSummaryComponent } from './sales-summary/sales-summary.component';
 import { GoalComponent } from './goal/goal.component';
 import { AddStockComponent } from './add-stock/add-stock.component';
 import { ProductMenuComponent } from './product-menu/product-menu.component';
-import { MenuComponent } from './menu/menu.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
@@ -43,7 +43,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     GoalComponent,
     AddStockComponent,
     ProductMenuComponent,
-    MenuComponent,
+    NavBarComponent,
     CategoriesComponent,
     ProductDetailComponent,
     CategoryOverviewComponent,
@@ -62,7 +62,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     SalesReportComponent,
     IndicatorComponent,
     SalesSummaryComponent,
-    MenuComponent,
+    NavBarComponent,
     SideMenuComponent
   ]
 })

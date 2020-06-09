@@ -22,6 +22,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CategoryOverviewComponent } from './category-overview/category-overview.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     CategoriesComponent,
     ProductDetailComponent,
     CategoryOverviewComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    SignInComponent,
+    RegisterComponent
 
   ],
   imports: [

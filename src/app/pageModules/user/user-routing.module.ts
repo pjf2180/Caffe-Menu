@@ -14,6 +14,8 @@ const routes: Routes = [
     children: [
       { path: UserRoutingPaths[UserRoutingPaths.home], component: LandingPageComponent },
       { path: UserRoutingPaths[UserRoutingPaths.menu], loadChildren: () => import('./menu-page/menu-page.module').then(m => m.MenuPageModule) },
+      { path: '', pathMatch: 'full', redirectTo: UserRoutingPaths[UserRoutingPaths.menu] },
+
     ]
   },
 

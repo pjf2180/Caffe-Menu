@@ -1,0 +1,36 @@
+<div class="register-container">
+    <form class="register-form" [formGroup]="formGroup" (ngSubmit)="register()">
+
+        <h5>Personal Info</h5>
+
+        <div class="form-grp">
+            <mat-form-field class="example-full-width">
+                <mat-label>First name</mat-label>
+                <input type="firstname" matInput placeholder="Type your firstname" formControlName="firstname">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width">
+                <mat-label>Last name</mat-label>
+                <input type="lastname" matInput placeholder="Type your lastname" formControlName="lastname">
+            </mat-form-field>            
+        </div>
+
+        <div class="form-grp">
+            <h5>Account credentials</h5>
+    
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Type your email" formControlName="email">
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Type your password" formControlName="password">
+            </mat-form-field>
+        </div>
+
+        <button type="submit" mat-flat-button color="primary">Register</button>
+
+    </form>
+
+</div>

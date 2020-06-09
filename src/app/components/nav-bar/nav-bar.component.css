@@ -1,15 +1,27 @@
 .menu{
- background-color: rgba(0, 0, 0, 0.315);
+    background-color: rgba(0, 0, 0, 0.315);
     width: 100%;
     position: sticky;
     position: -webkit-sticky;
     z-index: 1;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
+   
     padding: 10px 20px;
     color: white;
 } 
+
+.main-row{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    font-size: x-large;
+}
 
 .main-icon{
     font-size: 40px;

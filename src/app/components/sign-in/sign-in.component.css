@@ -1,0 +1,36 @@
+.sign-in-container{
+    padding: 2rem;
+}
+
+.sign-in-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+button{
+    width: 100%;
+}
+
+a{
+    text-decoration: underline;
+    color: violet;
+}
+mat-toolbar{
+    display: flex;
+    justify-content: center;
+}
+.register-info{
+    background-color: gainsboro;
+    padding: 2rem;
+    height: 280px;
+    width: 100%;
+}
+p{
+    margin-top: 2rem;
+}

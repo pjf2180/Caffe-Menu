@@ -1,22 +1,26 @@
 <div class="menu">
 
-    <div class="left-group">
-        <button mat-icon-button>
-            <mat-icon class="main-icon">local_cafe</mat-icon>
-        </button>
-        <ng-content select="button"></ng-content>
+    <div class="main-row">
+        <div class="left-group">
+            <button mat-icon-button>
+                <mat-icon class="main-icon">local_cafe</mat-icon>
+            </button>
+            <ng-content select="button"></ng-content>
+        </div>
+        <div class="right-group">
+            <button mat-icon-button>
+
+                <mat-icon>search</mat-icon>
+            </button>
+
+            <button mat-icon-button aria-label="Example icon-button with a menu">
+                <mat-icon class="menu-icon" (click)="requestSideMenuToggle()">menu</mat-icon>
+            </button>
+        </div>
     </div>
 
-    <div class="right-group">
-        <button mat-icon-button>
-
-            <mat-icon>search</mat-icon>
-        </button>
-
-        <button mat-icon-button  aria-label="Example icon-button with a menu">
-            <mat-icon class="menu-icon" (click)="requestSideMenuToggle()">menu</mat-icon>
-        </button>
-       
+    <div class="message">
+        <ng-content select="p"></ng-content>
     </div>
 
 </div>

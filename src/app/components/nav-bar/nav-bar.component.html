@@ -8,6 +8,7 @@
             <ng-content select="button"></ng-content>
         </div>
         <div class="right-group">
+            <app-search-bar></app-search-bar>
             <button mat-icon-button>
                 <mat-icon>search</mat-icon>
             </button>
@@ -16,18 +17,22 @@
                 <button mat-stroked-button>
                     <a [routerLink]="['./signin']" routerLinkActive="router-link-active">Sign in</a>
                 </button>
-    
+
                 <button mat-flat-button color="accent">
                     <a [routerLink]="['./signin/register']" routerLinkActive="router-link-active">Sign up</a>
                 </button>
             </div>
-            
+
 
             <button class="menu-btn" mat-icon-button aria-label="Example icon-button with a menu">
                 <mat-icon class="menu-icon" (click)="requestSideMenuToggle()">menu</mat-icon>
             </button>
         </div>
     </div>
+
+    <!-- <div class="search-container">
+        <app-search-bar></app-search-bar>
+    </div> -->
 
     <div class="message">
         <ng-content select="p"></ng-content>

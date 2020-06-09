@@ -24,6 +24,7 @@ import { CategoryOverviewComponent } from './category-overview/category-overview
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { RegisterComponent } from './register/register.component';
     CategoryOverviewComponent,
     SideMenuComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchBarComponent
 
   ],
   imports: [

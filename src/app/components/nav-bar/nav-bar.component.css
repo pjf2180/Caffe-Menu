@@ -36,7 +36,14 @@
     display: flex;
     padding: 10px 15px;
 }
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+    padding: 1rem;
 
+}
 /* .menu-icon{
     margin-left: 20px;
 } */
@@ -49,8 +56,9 @@ mat-icon{
 }
 .nav-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
+
 .nav-buttons button{
     margin-right: 1rem;
 }
@@ -63,3 +71,11 @@ mat-icon{
     } 
 }
 
+@media(max-width: 425px){
+    .menu{
+        padding: 5px;
+    }
+    .right-group{
+        padding: 5px;
+    }
+}

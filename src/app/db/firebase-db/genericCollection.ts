@@ -53,8 +53,9 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     }
     addBatch(arr: { docRef: DocumentReference, item: any }[]) {
         const batch = this.batch()
-        arr.forEach(item => {
-            batch.set(item.docRef, item.item);
+        arr.forEach(batchItem => {
+            
+            batch.set(batchItem.docRef, { ...batchItem.item, id: batchItem.docRef.id});
         })
         return batch.commit();
     }

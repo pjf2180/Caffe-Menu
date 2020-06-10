@@ -13,7 +13,7 @@ export class SideMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.menuGroupVm);
+
   }
 
 }

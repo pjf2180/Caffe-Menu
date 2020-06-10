@@ -18,7 +18,6 @@ export class CategoryOverviewComponent implements OnInit {
   }
 
   onItemClick(itemId: string) {
-    console.log(itemId)
     this.router.navigate([itemId||'noid'], { relativeTo: this.route })
   }
 }

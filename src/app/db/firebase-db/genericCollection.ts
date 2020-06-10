@@ -11,16 +11,30 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     public collectionReference: AngularFirestoreCollection<T>;
 
     constructor(protected afs: AngularFirestore) {
-
+    }
+    createId() {
+        return this.afs.createId();
     }
     add(item: T) {
-        return this.afs.collection(this.collectionName).add(item);
+        const newId = this.afs.createId();
+        const newDoc = this.afs.collection(this.collectionName).doc(newId);
+        return newDoc.set({ ...item, id: newId });
+        // return this.afs.collection(this.collectionName).add(item);
     }
     update(item: T) {
-        return this.collectionReference.doc(`${ (item as unknown as IFireStoreCollectionItem).id}`).set(item)
+        return this.collectionReference.doc(`${(item as unknown as IFireStoreCollectionItem).id}`).set(item)
     }
     remove(uuid: string) {
         this.collectionReference.doc(`${uuid}`).update({ active: false });
+    }
+    getById(id: string) {
+        return this.collectionReference.ref.where("id", "==", id)
+            .get()
+            .then(querySnapshot => {
+                console.log(querySnapshot)
+                const result = querySnapshot.docs[0];
+                return result.data();
+            });
     }
     get() {
         return this.collectionReference.snapshotChanges()

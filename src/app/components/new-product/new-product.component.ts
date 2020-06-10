@@ -3,6 +3,14 @@ import { Location } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AdminProductService } from 'src/app/services/admin-product.service';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
+import { ShoppingProductService } from 'src/app/services/product.service';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-new-product',
@@ -14,7 +22,13 @@ export class NewProductComponent implements OnInit {
   formGroup: FormGroup;
   attributeInsert: FormControl;
 
-  constructor(private location: Location, private adminProductService: AdminProductService) {
+
+  categories: Observable<Food[]>;
+
+  constructor(
+    private location: Location,
+    private adminProductService: AdminProductService,
+    public shoppingProductsService: ShoppingProductService) {
     this.attributeInsert = new FormControl('');
 
     this.formGroup = new FormGroup({
@@ -22,12 +36,24 @@ export class NewProductComponent implements OnInit {
       price: new FormControl(''),
       note: new FormControl(''),
       description: new FormControl(''),
+      category: new FormControl(''),
       attributes: new FormControl([])
     })
   }
 
   ngOnInit() {
-
+    console.log('On init')
+    this.categories = this.shoppingProductsService.getProductCategories()
+      .pipe(
+        map((results) => {
+          return results.map((item):Food=>{
+            console.log(item)
+            return {
+              value: item.id,
+              viewValue: item.name
+            }
+          })
+        }));
   }
 
   onBackClick() {
@@ -56,7 +82,7 @@ export class NewProductComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Form: ', this.formGroup.value)
+    console.log('Form: ', this.formGroup.value);
     const shoppingProduct: ShoppingProduct = ({ ...this.formGroup.value })
 
     this.adminProductService.addAdminProduct(shoppingProduct)

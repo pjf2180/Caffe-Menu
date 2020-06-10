@@ -10,14 +10,13 @@ export class UserComponent implements OnInit, OnDestroy {
 
   // Sidenav's initial state
   open: boolean;
-  matSideNavMode: string = 'side';
+  matSideNavMode: string = 'over';
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
-    this.matSideNavMode = this.mobileQuery.matches ? 'side' : 'over';
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
 

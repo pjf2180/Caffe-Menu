@@ -10,10 +10,6 @@
     padding: 1.5rem;
 }
 
-.menu-group-container{
-    /* position: relative; */
-}
-
 .group-heading{
     font-weight: bold;
 }
@@ -21,9 +17,6 @@ mat-nav-list a{
     font-weight: 500;
     font-size: 20px;
 }
-/* .link-active{
-    border-left: 4px #ffd740 solid !important;    
-} */
 
 .button-group{ 
     width: 80%;
@@ -34,13 +27,4 @@ mat-nav-list a{
 .bottom-toolbar{
   align-self: center;
 }
-@media(min-width: 768px){
-    .menu-container{
-        width: 150px;
-    }
-}
-@media(min-width: 930px){
-    .menu-container{
-        width: 200px;
-    }
-}
+

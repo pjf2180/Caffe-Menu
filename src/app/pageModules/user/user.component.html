@@ -1,4 +1,4 @@
-<div class="example-container"  [class.example-is-mobile]="!mobileQuery.matches">
+<div class="example-container"   [ngClass]="{'scroll-disable': open, 'example-is-mobile': !mobileQuery.matches}">
 
   <nav-bar [sideMenuState]="open" (togleSideMenu)="onSideMenuToggle($event)"></nav-bar>
 
@@ -6,7 +6,7 @@
   <mat-sidenav-container class="example-sidenav-container">
 
     <!-- Side content -->
-    <mat-sidenav [(mode)]="matSideNavMode" [(opened)]="open" (opened)="onOpen()" (closed)="onClose()" position="end">
+    <mat-sidenav  [style.marginTop.px]="82" [fixedInViewport]="true" [(mode)]="matSideNavMode" [(opened)]="open" (opened)="onOpen()" (closed)="onClose()" position="end">
       <app-side-menu></app-side-menu>
     </mat-sidenav>
 

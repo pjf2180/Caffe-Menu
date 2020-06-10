@@ -5,7 +5,15 @@
             <button mat-icon-button>
                 <mat-icon class="main-icon">local_cafe</mat-icon>
             </button>
-            <ng-content select="button"></ng-content>
+            <div *ngFor="let group of menuGroupVm" class="nav-btns">
+                <mat-nav-list>
+                    <a mat-list-item  *ngFor="let menuItem of group.links"
+                        [routerLink]="[menuItem.route]" routerLinkActive="link-active">
+                        <div mat-line>{{menuItem.label}}</div>
+                    </a>
+                </mat-nav-list>
+
+            </div>
         </div>
         <div class="right-group">
             <app-search-bar></app-search-bar>

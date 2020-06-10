@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
 
 
 @Component({
@@ -10,13 +11,17 @@ export class NavBarComponent implements OnInit {
 
   @Input() sideMenuState: boolean;
   @Output() togleSideMenu: EventEmitter<boolean> = new EventEmitter();
-  constructor() { }
+  menuGroupVm: MenuGroup[];
+  constructor(public sideBarService: SidebarService) {
+    this.menuGroupVm = sideBarService.userMenu;
+  }
 
   ngOnInit() {
+    console.log(this.menuGroupVm)
   }
-  requestSideMenuToggle(){
+  requestSideMenuToggle() {
     this.togleSideMenu.emit(!this.sideMenuState)
   }
-  
+
 
 }

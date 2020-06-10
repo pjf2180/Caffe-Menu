@@ -31,6 +31,14 @@
   display: flex;
   align-items: flex-start;
 }
+mat-nav-list{
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+mat-nav-list a{
+    color: white;
+}
 
 .right-group{
     display: flex;
@@ -69,6 +77,9 @@ mat-icon{
     .nav-buttons{
         display: none;
     } 
+    .nav-btns{
+        display: none;
+    }
 }
 
 @media(max-width: 425px){

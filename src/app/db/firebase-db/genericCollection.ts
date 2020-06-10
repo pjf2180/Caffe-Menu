@@ -31,7 +31,7 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         return this.collectionReference.ref.where("id", "==", id)
             .get()
             .then(querySnapshot => {
-                console.log(querySnapshot)
+                
                 const result = querySnapshot.docs[0];
                 return result.data();
             });

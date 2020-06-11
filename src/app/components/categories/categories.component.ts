@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-categories',
+  host: {'class': 'col-12 col-lg-8'},
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })

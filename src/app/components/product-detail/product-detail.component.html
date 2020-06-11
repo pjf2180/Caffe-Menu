@@ -1,12 +1,13 @@
 <div *ngIf="viewModel" class="main-container">
 
     <div class="primary-container">
-        <img class="product-image"
-            src="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242"
-            alt="">
-    </div>
 
-    <div class="secondary-container">
+        <img src="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242"
+            alt="">
+
+        
+
+
         <div class="info">
             <h4>{{viewModel.name}}</h4>
             <h6>$ {{viewModel.price}} dlls</h6>
@@ -16,17 +17,20 @@
             <div class="attributes">
                 <mat-chip-list aria-label="Fish selection">
                     <mat-chip color="primary" *ngFor="let attribute of viewModel.attributes">{{attribute}}</mat-chip>
-    
+
                 </mat-chip-list>
             </div>
-        </div> 
+            <div class="more-info">
+                <h6>Ingredients</h6>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eveniet fuga repellat culpa corrupti
+                rerum, dolorem non quo eligendi necessitatibus asperiores esse vitae! Dolorem at est voluptates.
+                Officia, mollitia itaque!
+            </div>
+        </div>
+
     </div>
 
-    <div class="more-info">
-        <h6>Ingredients</h6>
-       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium qui dolor culpa eum facere delectus quod quisquam laborum ipsum, at nam quae. Ipsa, repellendus delectus ut eum doloribus rem. Impedit at sed sequi praesentium eligendi minus quia, nemo exercitationem quas quo beatae reiciendis! Recusandae earum iure tempora itaque non ipsum autem labore tenetur aliquam quos doloribus obcaecati totam enim possimus, omnis laboriosam maxime quia harum? Nobis corporis harum expedita facere earum sapiente sequi dicta laborum qui molestias veniam nostrum voluptas, unde architecto possimus non quidem, ex culpa eligendi cumque? Minima officiis tempora blanditiis rerum omnis, ipsa debitis sint cupiditate atque.</p>
-    </div>
-    
+
 
     <button class="add-to-cart-btn" mat-flat-button color="accent">Add to order</button>
 </div>

@@ -1,0 +1,16 @@
+.menu-page{
+    display: flex;
+}
+
+app-cart{
+    flex: 2;
+}
+.outlet{
+    flex: 8;
+}
+
+@media(max-width: 768px){
+    app-cart{
+        display: none;
+    }
+}

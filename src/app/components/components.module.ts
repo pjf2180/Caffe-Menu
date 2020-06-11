@@ -25,6 +25,9 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CartComponent } from './cart/cart.component';
+import { RoundImageComponent } from './round-image/round-image.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 
 @NgModule({
@@ -53,7 +56,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     SideMenuComponent,
     SignInComponent,
     RegisterComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CartComponent,
+    RoundImageComponent,
+    CartItemComponent
 
   ],
   imports: [
@@ -69,7 +75,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     IndicatorComponent,
     SalesSummaryComponent,
     NavBarComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    CartComponent,
+    RoundImageComponent,
+    CartItemComponent
   ]
 })
 export class ComponentsModule { }

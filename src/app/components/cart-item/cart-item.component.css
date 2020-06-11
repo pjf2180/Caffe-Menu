@@ -1,0 +1,32 @@
+:host {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-info h5{
+    margin: 0;
+    
+}
+.product-info p{
+    font-weight: 400;
+    color: #ccc;
+}
+.quantity-controls input{
+    width: 40px;
+    padding: 4px 8px;
+}
+.control-row{
+    display: flex;
+    justify-content: space-between;
+}
+.control-row .incrementer{
+    padding: 8px;
+}
+.price{
+    font-weight: bolder;
+}
+.clear{
+    padding: 1.5rem;
+}

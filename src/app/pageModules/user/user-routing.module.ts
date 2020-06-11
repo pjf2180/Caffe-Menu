@@ -10,7 +10,7 @@ export enum UserRoutingPaths {
 
 const routes: Routes = [
   {
-    path: 'user', component: UserComponent,
+    path: '', component: UserComponent,
     children: [
       { path: 'signin',loadChildren: () => import('../signin-signup/signin-signup.module').then(m => m.SigninSignupModule)  },
       { path: UserRoutingPaths[UserRoutingPaths.home], component: LandingPageComponent },

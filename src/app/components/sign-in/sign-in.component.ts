@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { Store } from '@ngrx/store';
+import * as authActions from '../../store/auth/actions/auth.actions';
+import { AppState } from '../../store/root-state'
 
 @Component({
   selector: 'app-sign-in',
@@ -13,10 +15,10 @@ export class SignInComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(public router: Router, public route: ActivatedRoute, public auth: AuthService) {
+  constructor(public router: Router, public route: ActivatedRoute, public auth: AuthService, public store: Store<AppState>) {
     this.formGroup = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl('')
+      email: new FormControl('pjf2180@me.com'),
+      password: new FormControl('Robitussin123')
     })
   }
 
@@ -25,14 +27,17 @@ export class SignInComponent implements OnInit {
 
   signIn() {
     console.log('Signin in')
-    const email = this.formGroup.value.email;
-    const password = this.formGroup.value.password;
+    const email: string = this.formGroup.value.email;
+    const password: string = this.formGroup.value.password;
+    this.store.dispatch(authActions.signIn({ user: email, password: password }));
 
-    console.log(this.formGroup.value)
-
-    this.auth.login(email, password)
-      .then(result => this.router.navigate(['user']))
-      .catch(err => console.error(err));
+    // from(this.auth.login(email, password))
+    //   .subscribe(res => {
+    //     console.log(res);
+    //   })
+    // this.auth.login(email, password)
+    //   .then(result => this.router.navigate(['user']))
+    //   .catch(err => console.error(err));
 
   }
   redirectToRegister() {

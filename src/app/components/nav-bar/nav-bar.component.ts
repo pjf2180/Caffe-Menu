@@ -17,7 +17,6 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.menuGroupVm)
   }
   requestSideMenuToggle() {
     this.togleSideMenu.emit(!this.sideMenuState)

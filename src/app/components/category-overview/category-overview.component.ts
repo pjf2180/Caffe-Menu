@@ -14,7 +14,7 @@ export class CategoryOverviewComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.category)
+
   }
 
   onItemClick(itemId: string) {

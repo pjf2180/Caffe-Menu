@@ -1,11 +1,12 @@
 import { createAction, props } from '@ngrx/store';
 
-export const loadAuths = createAction(
-  '[Auth] Load Auths'
+export const signIn = createAction(
+  '[Auth] Sign in',
+  props<{ user: string, password: string }>()
 );
 
-export const loadAuthsSuccess = createAction(
-  '[Auth] Load Auths Success',
+export const SignInSuccess = createAction(
+  '[Auth] Sign in Success',
   props<{ data: any }>()
 );
 

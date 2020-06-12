@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "angular-boiler-plate"
+  "defaultProject": "angular-boiler-plate",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

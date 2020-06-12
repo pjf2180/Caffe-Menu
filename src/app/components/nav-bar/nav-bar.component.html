@@ -7,8 +7,8 @@
             </button>
             <div *ngFor="let group of menuGroupVm" class="nav-btns">
                 <mat-nav-list>
-                    <a mat-list-item  *ngFor="let menuItem of group.links"
-                        [routerLink]="[menuItem.route]" routerLinkActive="link-active">
+                    <a mat-list-item *ngFor="let menuItem of group.links" [routerLink]="[menuItem.route]"
+                        routerLinkActive="link-active">
                         <div mat-line>{{menuItem.label}}</div>
                     </a>
                 </mat-nav-list>
@@ -18,9 +18,14 @@
         <div class="right-group">
             <app-search-bar></app-search-bar>
 
-            <button mat-icon-button>
-                <mat-icon>shopping_cart</mat-icon>
-            </button>
+            <div class="nav-btns">
+                <mat-nav-list>
+                    <a mat-list-item [routerLink]="['cart']" routerLinkActive="router-link-active">
+                        <mat-icon>shopping_cart</mat-icon>
+                    </a>
+                </mat-nav-list>
+            </div>
+
 
             <div class="nav-buttons">
                 <button mat-stroked-button>

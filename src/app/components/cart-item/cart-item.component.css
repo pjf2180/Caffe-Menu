@@ -1,6 +1,6 @@
 :host {
     width: 100%;
-    height: 40px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
 }
@@ -16,20 +16,32 @@
     color: #ccc;
     margin: 0;
 }
+.quantity-controls{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
 .quantity-controls input{
-    width: 40px;
-    /* padding: 4px 8px; */
-    height: 25px;
+    width: 20px;
+    height: 20px;
+   font-size: larger;
 }
 .control-row{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.control-row button{
+
 }
 .control-row .incrementer{
     padding: 8px;
 }
 .price{
     font-weight: bolder;
+    text-align: center;
 }
 .clear{
     padding: 1.5rem;

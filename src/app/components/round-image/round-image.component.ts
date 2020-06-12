@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class RoundImageComponent implements OnInit {
 
   @Input() imgSource: string = '';
+  @Input() height: number = 0;
+  @Input() width: number = 0;
   constructor() { }
 
   ngOnInit() {

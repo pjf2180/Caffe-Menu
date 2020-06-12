@@ -7,8 +7,8 @@
     left: 0;
     right: 0;
 }
-.router-outlet-container{
-    height: fit-content;
+.outlet{
+    padding-top: 2rem;
 }
 
 .example-is-mobile .example-toolbar {

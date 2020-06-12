@@ -1,17 +1,26 @@
-<app-round-image class="flx-col-cntr" imgSource="https://source.unsplash.com/random"></app-round-image>
+<app-round-image class="flx-col-cntr" imgSource="https://source.unsplash.com/random" width="60" height="60">
+</app-round-image>
+
 <div class="product-info flx-col-cntr">
     <h5>Chocolate</h5>
     <p>Muffin</p>
 </div>
 
-<div class="quantity-controls flx-col-cntr">
+<div class="quantity-controls ">
     <div class="control-row">
-        <div class="incrementer">&#10094;</div>
+        <button  mat-button class="incrementer">&#10094;</button>
         <input type="number" name="" id="">
-        <div class="incrementer">&#10095;</div>
-
+        <button  mat-button class="incrementer">&#10095;</button>
     </div>
+    <div class="price">$10.50</div>
 </div>
-<div class="price flx-col-cntr">$10.50</div>
-<div class="clear flx-col-cntr">&#10005;</div>
+
+<div class="total flx-col-cntr">
+    <div >Total</div>
+    <div class="price">$10.50</div>
+</div>
+
+<div class="clear flx-col-cntr">
+    <button mat-button>&#10005;</button>
+</div>
 

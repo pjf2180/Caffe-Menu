@@ -1,4 +1,6 @@
 .cart-container{
-
+    padding-top: 2rem;
 }
-
+.cart-items{
+    margin-top: 2rem;
+}

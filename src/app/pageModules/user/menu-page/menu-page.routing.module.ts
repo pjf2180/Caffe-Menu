@@ -4,6 +4,7 @@ import { MenuPageComponent } from './menu-page.component';
 import { CategoriesComponent } from 'src/app/components/categories/categories.component';
 import { ProductDetailComponent } from 'src/app/components/product-detail/product-detail.component';
 
+
 const routes: Routes = [
   {
     path: '', component: MenuPageComponent,

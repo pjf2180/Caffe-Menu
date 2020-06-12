@@ -82,11 +82,3 @@ mat-icon{
     }
 }
 
-@media(max-width: 425px){
-    .menu{
-        padding: 5px;
-    }
-    .right-group{
-        padding: 5px;
-    }
-}

@@ -5,6 +5,8 @@ import { of, from, Observable, Subscriber } from 'rxjs';
 
 import * as AuthActions from '../actions/auth.actions';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Injectable()
 export class AuthEffects {
@@ -17,7 +19,8 @@ export class AuthEffects {
         from(this.authService.login(action.user, action.password))
           .pipe(
             map(data => {
-              const userInfo = { email: data.user.email, uid: data.user.uid }
+              const userInfo = { email: data.user.email, uid: data.user.uid };
+              this.router.navigate(['user','menu']);
               return AuthActions.SignInSuccess({ data: userInfo })
             }),
             catchError(error => {
@@ -26,6 +29,7 @@ export class AuthEffects {
     );
   });
 
-  constructor(private actions$: Actions, private authService: AuthService) { }
+
+  constructor(private actions$: Actions, private authService: AuthService, private router: Router) { }
 
 }

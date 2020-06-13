@@ -18,7 +18,7 @@
         <div class="right-group">
             <app-search-bar></app-search-bar>
 
-            <div class="nav-btns">
+            <div *ngIf="signedIn$ | async; else signBtns " class="nav-btns">
                 <mat-nav-list>
                     <a mat-list-item [routerLink]="['checkout']" routerLinkActive="router-link-active">
                         <mat-icon>shopping_cart</mat-icon>
@@ -26,16 +26,18 @@
                 </mat-nav-list>
             </div>
 
+            <ng-template #signBtns> 
+                <div class="nav-buttons">
+                    <button mat-stroked-button>
+                        <a [routerLink]="['./signin']" routerLinkActive="router-link-active">Sign in</a>
+                    </button>
 
-            <div class="nav-buttons">
-                <button mat-stroked-button>
-                    <a [routerLink]="['./signin']" routerLinkActive="router-link-active">Sign in</a>
-                </button>
+                    <button mat-flat-button color="accent">
+                        <a [routerLink]="['./signin/register']" routerLinkActive="router-link-active">Sign up</a>
+                    </button>
+                </div>
+            </ng-template>
 
-                <button mat-flat-button color="accent">
-                    <a [routerLink]="['./signin/register']" routerLinkActive="router-link-active">Sign up</a>
-                </button>
-            </div>
 
 
             <button class="menu-btn" mat-icon-button aria-label="Example icon-button with a menu">

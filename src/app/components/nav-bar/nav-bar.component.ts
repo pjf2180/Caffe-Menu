@@ -1,5 +1,9 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
+import { AppState } from 'src/app/store/root-state';
+import { Store } from '@ngrx/store';
+import { selectIsAuth, selectAuthState } from '../../store/auth/selectors/auth.selectors';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,11 +16,14 @@ export class NavBarComponent implements OnInit {
   @Input() sideMenuState: boolean;
   @Output() togleSideMenu: EventEmitter<boolean> = new EventEmitter();
   menuGroupVm: MenuGroup[];
-  constructor(public sideBarService: SidebarService) {
+  signedIn$: Observable<boolean>;
+
+  constructor(public sideBarService: SidebarService, public store: Store<AppState>) {
     this.menuGroupVm = sideBarService.userMenu;
   }
 
   ngOnInit() {
+    this.signedIn$ = this.store.select(selectIsAuth);
   }
   requestSideMenuToggle() {
     this.togleSideMenu.emit(!this.sideMenuState)

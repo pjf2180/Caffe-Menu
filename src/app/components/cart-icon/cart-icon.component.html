@@ -1,0 +1,5 @@
+<mat-nav-list>
+    <a mat-list-item [routerLink]="['checkout']" routerLinkActive="router-link-active">
+        <mat-icon [matBadge]="quantity | async " matBadgeColor="accent">shopping_cart</mat-icon>
+    </a>
+</mat-nav-list>

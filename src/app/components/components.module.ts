@@ -28,6 +28,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { RoundImageComponent } from './round-image/round-image.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { CartIconComponent } from './cart-icon/cart-icon.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     SearchBarComponent,
     CartComponent,
     RoundImageComponent,
-    CartItemComponent
+    CartItemComponent,
+    CartIconComponent
 
   ],
   imports: [

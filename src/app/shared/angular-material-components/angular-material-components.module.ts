@@ -14,6 +14,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
@@ -32,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatChipsModule,
     MatProgressBarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule
   ],
   exports: [
     MatSidenavModule,
@@ -48,7 +50,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatChipsModule,
     MatProgressBarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule
   ]
 })
 export class AngularMaterialComponentsModule { }

@@ -1,24 +1,12 @@
 <div class="cart-container">
     <h4>Cart Items</h4>
     <div class="cart-items">
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
-        <app-cart-item></app-cart-item>
-        <div class="divider"></div>
+
+        <div *ngFor="let item of items | async" class="cart-item">
+            <app-cart-item></app-cart-item>
+            <div class="divider"></div>
+        </div>
+
     </div>
-    
+
 </div>

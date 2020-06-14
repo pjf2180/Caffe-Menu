@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthEffects } from './auth/effects/auth.effects';
 import { environment } from 'src/environments/environment';
 import { MenuModule } from './menu/menu.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [],
@@ -15,7 +16,8 @@ import { MenuModule } from './menu/menu.module';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    MenuModule
+    MenuModule,
+    CartModule
   ]
 })
 export class RootStoreModule { }

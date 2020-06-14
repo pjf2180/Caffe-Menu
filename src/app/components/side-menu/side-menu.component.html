@@ -23,15 +23,19 @@
 
         <div class="divider"></div>
 
-        <div class="button-group">
-            <button mat-stroked-button>
-                <a  [routerLink]="['./signin']" routerLinkActive="router-link-active" >Sign in</a>
-            </button>
+        <div *ngIf="signedIn$ | async; else signInbtns"></div>
 
-            <button mat-flat-button color="accent">
-                <a  [routerLink]="['./signin/register']" routerLinkActive="router-link-active" >Sign up</a>
-            </button>
-        </div>
+        <ng-template #signInbtns>
+            <div class="button-group">
+                <button mat-stroked-button>
+                    <a [routerLink]="['./signin']" routerLinkActive="router-link-active">Sign in</a>
+                </button>
+
+                <button mat-flat-button color="accent">
+                    <a [routerLink]="['./signin/register']" routerLinkActive="router-link-active">Sign up</a>
+                </button>
+            </div>
+        </ng-template>
 
 
     </div>

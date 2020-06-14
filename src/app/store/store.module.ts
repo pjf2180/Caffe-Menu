@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthEffects } from './auth/effects/auth.effects';
 import { environment } from 'src/environments/environment';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,8 @@ import { environment } from 'src/environments/environment';
     CommonModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    MenuModule
   ]
 })
 export class RootStoreModule { }

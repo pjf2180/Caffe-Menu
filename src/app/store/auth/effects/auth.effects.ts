@@ -20,7 +20,7 @@ export class AuthEffects {
           .pipe(
             map(data => {
               const userInfo = { email: data.user.email, uid: data.user.uid };
-              this.router.navigate(['user','menu']);
+              this.router.navigate(['user', 'menu']);
               return AuthActions.SignInSuccess({ data: userInfo })
             }),
             catchError(error => {
@@ -29,6 +29,26 @@ export class AuthEffects {
     );
   });
 
+  checkAuth$ = createEffect(() => {
+    return this.actions$.pipe(
+
+      ofType(AuthActions.checkAuth),
+      mergeMap((action) =>
+        from(this.authService.isAuthenticated())
+          .pipe(
+            map(authState => {
+              if (authState) {
+                return AuthActions.SignInSuccess(
+                  { data: { email: authState.email, uid: authState.uid } });
+              }else{
+                throw Error('No auth found');
+              }
+            }),
+            catchError(error => {
+              return of(AuthActions.loadAuthsFailure({ error }))
+            })))
+    );
+  });
 
   constructor(private actions$: Actions, private authService: AuthService, private router: Router) { }
 

@@ -14,3 +14,8 @@ export const loadAuthsFailure = createAction(
   '[Auth] Load Auths Failure',
   props<{ error: any }>()
 );
+
+
+export const checkAuth = createAction(
+  '[Auth] Checking auth'
+);

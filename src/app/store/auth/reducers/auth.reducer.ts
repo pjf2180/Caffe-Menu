@@ -28,5 +28,10 @@ export const reducer = createReducer(
   }),
   on(AuthActions.loadAuthsFailure, (state, action) => state),
 
+  
+  on(AuthActions.checkAuth, (state, action) => state),
+
+
+
 );
 

@@ -8,9 +8,9 @@
 
 <div class="quantity-controls ">
     <div class="control-row">
-        <button mat-button class="incrementer">&#10094;</button>
-        <input type="number" [value]=" item.quantity">
-        <button mat-button class="incrementer">&#10095;</button>
+        <button mat-button class="incrementer" (click)="increment(-1)">&#10094;</button>
+        <input type="number" [(ngModel)]="quantity" (ngModelChange)="onQtyChange(event$)" >
+        <button mat-button class="incrementer" (click)="increment(1)">&#10095;</button>
     </div>
     <div class="price">${{ item.product.price}}</div>
 </div>
@@ -21,5 +21,5 @@
 </div>
 
 <div class="clear flx-col-cntr">
-    <button mat-button>&#10005;</button>
+    <button mat-button (click)="clearItem()">&#10005;</button>
 </div>

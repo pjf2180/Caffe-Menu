@@ -16,11 +16,9 @@ export const reducer = createReducer(
   initialState,
 
   on(AuthActions.signIn, state => {
-    console.log('Hello world');
     return state
   }),
   on(AuthActions.SignInSuccess, (state, action): State => {
-    console.log(action);
     return {
       ...state,
       user: action.data

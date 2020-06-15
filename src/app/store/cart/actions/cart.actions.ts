@@ -4,7 +4,7 @@ import { CartItem } from 'src/app/models/cart-item.models';
 
 export const addToCart = createAction(
   '[Cart] Add item to cart',
-  props<{ itemAdded: ShoppingProduct}>()
+  props<{ itemAdded: ShoppingProduct }>()
 );
 
 export const loadCarts = createAction(
@@ -20,3 +20,14 @@ export const loadCartsFailure = createAction(
   '[Cart] Load Carts Failure',
   props<{ error: any }>()
 );
+
+export const setItemQuantity = createAction(
+  '[Cart] Set item quantity',
+  props<{ shoppingProduct: ShoppingProduct, quantity: number }>()
+);
+
+export const clearItem = createAction(
+  '[Cart] Clear Item',
+  props<{ shoppingProduct: ShoppingProduct }>()
+);
+

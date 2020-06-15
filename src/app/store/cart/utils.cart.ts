@@ -21,8 +21,22 @@ export function addItemToList(currentCartItems: CartItem[], itemAdded: ShoppingP
     else {
         return [...currentCartItems, { product: itemAdded, quantity: 1 }]
     }
+}
 
+export function setItemQuantity(currentCartItems: CartItem[], shoppingProduct: ShoppingProduct, quantity: number): CartItem[] {
 
+    return currentCartItems.map((item): CartItem => {
+        if (item.product.id === shoppingProduct.id) {
+            return {
+                product: { ...shoppingProduct },
+                quantity: quantity
+            }
+        } else {
+            return { ...item }
+        }
+    });
+}
 
-
+export function clearItem(currentCartItems: CartItem[], shoppingProduct: ShoppingProduct): CartItem[] {
+    return currentCartItems.filter(c => c.product.id !== shoppingProduct.id);
 }

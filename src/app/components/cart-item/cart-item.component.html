@@ -2,25 +2,24 @@
 </app-round-image>
 
 <div class="product-info flx-col-cntr">
-    <h5>Chocolate</h5>
-    <p>Muffin</p>
+    <h5>{{ item.product.name }}</h5>
+    <p>{{ item.product.note }}</p>
 </div>
 
 <div class="quantity-controls ">
     <div class="control-row">
-        <button  mat-button class="incrementer">&#10094;</button>
-        <input type="number" name="" id="">
-        <button  mat-button class="incrementer">&#10095;</button>
+        <button mat-button class="incrementer">&#10094;</button>
+        <input type="number" [value]=" item.quantity">
+        <button mat-button class="incrementer">&#10095;</button>
     </div>
-    <div class="price">$10.50</div>
+    <div class="price">${{ item.product.price}}</div>
 </div>
 
 <div class="total flx-col-cntr">
-    <div >Total</div>
-    <div class="price">$10.50</div>
+    <div>Total</div>
+    <div class="price">${{ item.product.price * item.quantity }}</div>
 </div>
 
 <div class="clear flx-col-cntr">
     <button mat-button>&#10005;</button>
 </div>
-

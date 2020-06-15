@@ -3,7 +3,7 @@
     <div class="cart-items">
 
         <div *ngFor="let item of items | async" class="cart-item">
-            <app-cart-item></app-cart-item>
+            <app-cart-item [item]="item"></app-cart-item>
             <div class="divider"></div>
         </div>
 

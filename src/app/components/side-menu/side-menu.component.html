@@ -1,7 +1,10 @@
 <div class="menu-container">
     <div class="groups-container">
+        
+        <app-search-bar></app-search-bar>
 
         <div class="menu-group-container">
+
 
             <div *ngFor="let group of menuGroupVm" class="group-container">
                 <!-- <mat-list>
@@ -42,6 +45,6 @@
 
 
     <div class="bottom-toolbar">
-        <p>mini-toolbar</p>
+        <app-user-settings-dropdown ></app-user-settings-dropdown>
     </div>
 </div>

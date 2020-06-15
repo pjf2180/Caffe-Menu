@@ -21,3 +21,29 @@ button a{
     flex-direction: column;
     justify-content: center;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* Below 768px */
+@media(max-width: 768px){
+  .hd-mobl{
+    display: none;
+  }
+}
+
+/* Above 768px */
+@media(min-width: 769px){
+  .only-mobl{
+    display: none;
+  }
+}

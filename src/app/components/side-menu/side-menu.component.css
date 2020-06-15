@@ -25,6 +25,6 @@ mat-nav-list a{
 }
 
 .bottom-toolbar{
-  align-self: center;
+  align-self: flex-end;
 }
 

@@ -44,6 +44,10 @@ mat-nav-list a{
     display: flex;
     padding: 10px 15px;
 }
+.signed-in-section{
+    display: flex;
+    align-items: center;
+}
 .search-container{
     width: 100%;
     display: flex;
@@ -59,9 +63,7 @@ mat-nav-list a{
 mat-icon{
     align-items: center;
 }
-.menu-btn{
-    display: none;
-}
+
 .nav-buttons{
     display: flex;
     justify-content: flex-end;
@@ -70,15 +72,5 @@ mat-icon{
 .nav-buttons button{
     margin-right: 1rem;
 }
-@media(max-width: 768px){
-    .menu-btn{
-        display: flex;
-    }
-    .nav-buttons{
-        display: none;
-    } 
-    .nav-btns{
-        display: none;
-    }
-}
+
 

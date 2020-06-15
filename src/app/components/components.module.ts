@@ -29,6 +29,7 @@ import { CartComponent } from './cart/cart.component';
 import { RoundImageComponent } from './round-image/round-image.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { CartIconComponent } from './cart-icon/cart-icon.component';
+import { UserSettingsDropdownComponent } from './user-settings-dropdown/user-settings-dropdown.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { CartIconComponent } from './cart-icon/cart-icon.component';
     CartComponent,
     RoundImageComponent,
     CartItemComponent,
-    CartIconComponent
+    CartIconComponent,
+    UserSettingsDropdownComponent
 
   ],
   imports: [

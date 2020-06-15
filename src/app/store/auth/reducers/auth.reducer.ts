@@ -4,7 +4,7 @@ import * as AuthActions from '../actions/auth.actions';
 export const authFeatureKey = 'auth';
 
 export interface State {
-  user: any
+  user: { email: string, uid: string }
 }
 
 export const initialState: State = {
@@ -28,7 +28,7 @@ export const reducer = createReducer(
   }),
   on(AuthActions.loadAuthsFailure, (state, action) => state),
 
-  
+
   on(AuthActions.checkAuth, (state, action) => state),
 
 

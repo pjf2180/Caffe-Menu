@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import * as CartActions from '../actions/cart.actions';
 import { CartItem } from '../../../models/cart-item.models'
-
+import { addItemToList } from '../utils.cart'
 export const cartFeatureKey = 'cart';
 
 export interface State {
@@ -15,10 +15,10 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
 
-  on(CartActions.addToCart, (state, action) => {
+  on(CartActions.addToCart, (state, action): State => {
     return {
       ...state,
-      items: [...state.items, action.itemAdded]
+      items: addItemToList([...state.items], action.itemAdded)
     }
   }),
 

@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
+import { CartItem } from 'src/app/models/cart-item.models';
 
 export const addToCart = createAction(
   '[Cart] Add item to cart',
@@ -12,7 +13,7 @@ export const loadCarts = createAction(
 
 export const loadCartsSuccess = createAction(
   '[Cart] Load Carts Success',
-  props<{ data: any }>()
+  props<{ data: CartItem }>()
 );
 
 export const loadCartsFailure = createAction(

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/root-state';
+import { AppState } from 'src/app/store/root-reducer';
 import { signOut } from '../../store/auth/actions/auth.actions'
 
 @Component({

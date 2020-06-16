@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ShoppingProductService } from 'src/app/services/product.service';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/root-state';
+import { AppState } from 'src/app/store/root-reducer';
 import * as cartActions from '../../store/cart/actions/cart.actions'
 
 @Component({

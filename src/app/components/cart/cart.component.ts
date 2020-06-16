@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/root-state';
+import { AppState } from 'src/app/store/root-reducer';
 import { Observable } from 'rxjs';
 import { selectCartItems } from 'src/app/store/cart/selectors/cart.selectors';
 import { CartItem } from 'src/app/models/cart-item.models';

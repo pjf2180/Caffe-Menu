@@ -24,7 +24,6 @@ import { RootStoreModule } from './store/store.module';
     SharedModule,
     RootStoreModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

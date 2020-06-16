@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartItem } from 'src/app/models/cart-item.models';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/root-state';
+import { AppState } from 'src/app/store/root-reducer';
 import { setItemQuantity, clearItem } from '../../store/cart/actions/cart.actions'
 import { isNullOrUndefined } from 'util';
 @Component({

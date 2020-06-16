@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Store } from '@ngrx/store';
 import * as authActions from '../../store/auth/actions/auth.actions';
-import { AppState } from '../../store/root-state'
+import { AppState } from '../../store/root-reducer'
 
 @Component({
   selector: 'app-sign-in',

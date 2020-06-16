@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
-import { AppState } from 'src/app/store/root-state';
+import { AppState } from 'src/app/store/root-reducer';
 import { Store } from '@ngrx/store';
 import { selectIsAuth, selectAuthState } from '../../store/auth/selectors/auth.selectors';
 import { Observable } from 'rxjs';

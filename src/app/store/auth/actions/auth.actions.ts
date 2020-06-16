@@ -19,3 +19,13 @@ export const loadAuthsFailure = createAction(
 export const checkAuth = createAction(
   '[Auth] Checking auth'
 );
+
+export const signOut = createAction(
+  '[Auth] Sign out'
+);
+export const signOutSuccess = createAction(
+  '[Auth] Sign out success'
+);
+export const signOutFailed = createAction(
+  '[Auth] Sign out failed'
+);

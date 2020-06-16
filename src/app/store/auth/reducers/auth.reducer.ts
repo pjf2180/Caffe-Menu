@@ -29,6 +29,8 @@ export const reducer = createReducer(
 
   on(AuthActions.checkAuth, (state, action) => state),
 
+  on(AuthActions.signOut, (state, action) => initialState),
+
 
 
 );

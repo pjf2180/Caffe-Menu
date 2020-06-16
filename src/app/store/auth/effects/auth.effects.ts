@@ -40,7 +40,7 @@ export class AuthEffects {
               if (authState) {
                 return AuthActions.SignInSuccess(
                   { data: { email: authState.email, uid: authState.uid } });
-              }else{
+              } else {
                 throw Error('No auth found');
               }
             }),
@@ -49,6 +49,24 @@ export class AuthEffects {
             })))
     );
   });
+
+  signOut$ = createEffect(() => {
+    return this.actions$.pipe(
+
+      ofType(AuthActions.signOut),
+      mergeMap((action) =>
+        from(this.authService.logout())
+          .pipe(
+            map(() => {
+              this.router.navigate(['user', 'home']);
+              return AuthActions.signOutSuccess();
+            }),
+            catchError(error => {
+              return of(AuthActions.signOutFailed())
+            })))
+    );
+  });
+
 
   constructor(private actions$: Actions, private authService: AuthService, private router: Router) { }
 

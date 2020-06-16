@@ -16,6 +16,7 @@
             </div>
         </div>
         <div class="right-group">
+            
             <app-search-bar class="hd-mobl"></app-search-bar>
 
             <div class="signed-in-section" *ngIf="signedIn$ | async; else signBtns ">
@@ -36,20 +37,11 @@
             </ng-template>
 
             <div class="only-mobl">
-                <button  mat-icon-button aria-label="Example icon-button with a menu">
+                <button mat-icon-button aria-label="Example icon-button with a menu">
                     <mat-icon class="menu-icon" (click)="requestSideMenuToggle()">menu</mat-icon>
                 </button>
             </div>
 
         </div>
     </div>
-
-    <!-- <div class="search-container">
-        <app-search-bar></app-search-bar>
-    </div> -->
-
-    <div class="message">
-        <ng-content select="p"></ng-content>
-    </div>
-
 </div>

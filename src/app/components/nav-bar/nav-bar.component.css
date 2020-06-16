@@ -56,9 +56,6 @@ mat-nav-list a{
     padding: 1rem;
 
 }
-/* .menu-icon{
-    margin-left: 20px;
-} */
 
 mat-icon{
     align-items: center;
@@ -67,6 +64,7 @@ mat-icon{
 .nav-buttons{
     display: flex;
     justify-content: flex-end;
+    margin-left: 1rem;
 }
 
 .nav-buttons button{

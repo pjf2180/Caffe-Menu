@@ -2,6 +2,13 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a,
+a:focus,
+a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
 button:focus{
     outline: none;
 }

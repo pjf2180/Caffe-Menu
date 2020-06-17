@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule, META_REDUCERS, MetaReducer } from '@ngrx/store';
+import { StoreModule, META_REDUCERS, MetaReducer, ActionReducer } from '@ngrx/store';
 import { reducers } from './root-reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -29,7 +29,7 @@ export function getMetaReducers(saveKeys: string[], localStorageKey: string, sto
     MenuModule,
     CartModule
   ],
-  providers: [ 
+  providers: [
     { provide: ROOT_STORAGE_KEYS, useValue: [cartFeatureKey] },
     { provide: ROOT_LOCAL_STORAGE_KEY, useValue: '__app_storage__' },
     {

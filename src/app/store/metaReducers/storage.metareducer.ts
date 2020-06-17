@@ -7,9 +7,6 @@ export function storageMetaReducer<S, A extends Action = Action>(
     saveKeys: string[],
     localStorageKey: string,
     storageService: LocalStorageService) {
-    console.log(storageService);
-    console.log(saveKeys);
-    console.log(localStorageKey);
 
     let onInit = true; // after load/refresh…
     return function (reducer: ActionReducer<S, A>) {

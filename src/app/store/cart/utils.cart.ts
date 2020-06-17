@@ -40,3 +40,7 @@ export function setItemQuantity(currentCartItems: CartItem[], shoppingProduct: S
 export function clearItem(currentCartItems: CartItem[], shoppingProduct: ShoppingProduct): CartItem[] {
     return currentCartItems.filter(c => c.product.id !== shoppingProduct.id);
 }
+
+export function calculateCartTotal(cartItems: CartItem[]): number {
+    return cartItems.reduce((total, cartItem) => (cartItem.quantity * cartItem.product.price + total), 0);
+}

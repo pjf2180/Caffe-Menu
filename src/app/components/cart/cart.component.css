@@ -4,3 +4,12 @@
 .cart-items{
     margin-top: 2rem;
 }
+.total-row{
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

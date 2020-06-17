@@ -9,4 +9,11 @@
 
     </div>
 
+    <div *ngIf="cartTotal | async as total" class="total-row">
+        <div class="cart-total">
+            <h5>Total</h5>
+            <h6>$ {{ total }}</h6>
+        </div>
+    </div>
+
 </div>

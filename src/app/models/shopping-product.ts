@@ -11,4 +11,5 @@ export interface ShoppingProduct extends IProduct {
     description: string;
     name: string;
     note: string;
+    categoryName?: string;
 }

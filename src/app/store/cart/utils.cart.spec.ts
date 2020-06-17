@@ -76,7 +76,6 @@ describe('store/cart utils', () => {
         //Act
         const newCart: CartItem[] = addItemToList(currentCartItems, itemToAdd);
         const addedProductInCart = newCart.find(x => x.product.id === productId);
-        console.log(newCart);
         //Assert
         expect(addedProductInCart.quantity).toBe(initialQty + 1);
     });

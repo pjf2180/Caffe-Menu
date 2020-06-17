@@ -12,7 +12,7 @@ import { ProductCategoriesCollection } from '../db/firebase-db/collections/categ
 export class ShoppingProductService {
 
   constructor(
-    public shoppingProducts: ProductCollection<IProduct>,
+    public shoppingProducts: ProductCollection<ShoppingProduct>,
     public  categoryCollection: ProductCategoriesCollection<ProductCategory>) { }
 
   addProduct() {

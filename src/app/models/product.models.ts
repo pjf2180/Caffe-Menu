@@ -9,6 +9,7 @@ export interface IProduct extends IFireStoreCollectionItem {
     rating: number;
     imageUrl: string;
     available: boolean;
+    categoryId?: string;
 }
 
 

@@ -9,7 +9,7 @@ export function groupProductsByCategory(products: ShoppingProduct[]): ProductCat
     return Object.keys(groups).map((key): ProductCategory => {
         const groupedProducts = groups[key];
         return {
-            id: '',
+            id: groupedProducts[0].category,
             name: key,
             items: groupedProducts
         }

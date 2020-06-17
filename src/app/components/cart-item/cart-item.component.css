@@ -33,16 +33,28 @@
     justify-content: space-between;
     align-items: center;
 }
-.control-row button{
-
-}
 .control-row .incrementer{
     padding: 8px;
+}
+.control-row input{
+    min-width: 25px;
 }
 .price{
     font-weight: bolder;
     text-align: center;
 }
+
 .clear{
-    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.mat-button{
+    padding: 0;
+    min-width: 30px;
+}
+.col{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

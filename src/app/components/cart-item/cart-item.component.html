@@ -1,25 +1,40 @@
-<app-round-image class="flx-col-cntr" imgSource="https://source.unsplash.com/random" width="60" height="60">
-</app-round-image>
+<div class="container-fluid">
 
-<div class="product-info flx-col-cntr">
-    <h5>{{ item.product.name }}</h5>
-    <p>{{ item.product.note }}</p>
-</div>
+    <div class="row">
+        
+        <div class="col">
+            <app-round-image class="flx-col-cntr" imgSource="https://source.unsplash.com/random" width="60" height="60">
+            </app-round-image>
+        </div>
+        <div class="col">
+            <div class="product-info flx-col-cntr">
+                <h5>{{ item.product.name }}</h5>
+                <p>{{ item.product.note }}</p>
+            </div>
+        </div>
+        <div class="col">
 
-<div class="quantity-controls ">
-    <div class="control-row">
-        <button mat-button class="incrementer" (click)="increment(-1)">&#10094;</button>
-        <input type="number" [(ngModel)]="quantity" (ngModelChange)="onQtyChange(event$)" >
-        <button mat-button class="incrementer" (click)="increment(1)">&#10095;</button>
+            <div class="quantity-controls ">
+                <div class="control-row">
+                    <button mat-button class="incrementer" (click)="increment(-1)">&#10094;</button>
+                    <input type="number" [(ngModel)]="quantity" (ngModelChange)="onQtyChange(event$)">
+                    <button mat-button class="incrementer" (click)="increment(1)">&#10095;</button>
+                </div>
+                <div class="price">${{ item.product.price}}</div>
+            </div>
+            
+        </div>
+        <div class="col">
+            <div class="total flx-col-cntr">
+                <div>Total</div>
+                <div class="price">${{ item.product.price * item.quantity }}</div>
+            </div>
+        </div>
+        <div class="col clear">
+            <div class="flx-col-cntr">
+            <button mat-button class="clear-btn" (click)="clearItem()">&#10005;</button>
+        </div>
+        </div>
+        
     </div>
-    <div class="price">${{ item.product.price}}</div>
-</div>
-
-<div class="total flx-col-cntr">
-    <div>Total</div>
-    <div class="price">${{ item.product.price * item.quantity }}</div>
-</div>
-
-<div class="clear flx-col-cntr">
-    <button mat-button (click)="clearItem()">&#10005;</button>
 </div>

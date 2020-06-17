@@ -11,11 +11,13 @@ export enum UserRoutingPaths {
   checkout
 }
 
+export const userMainRoute = 'user';
+
 const routes: Routes = [
   {
-    path: 'user', component: UserComponent,
+    path: userMainRoute, component: UserComponent,
     children: [
-      { path: 'signin',loadChildren: () => import('./signin-signup/signin-signup.module').then(m => m.SigninSignupModule)  },
+      { path: 'signin', loadChildren: () => import('./signin-signup/signin-signup.module').then(m => m.SigninSignupModule) },
       { path: UserRoutingPaths[UserRoutingPaths.home], component: LandingPageComponent },
       { path: UserRoutingPaths[UserRoutingPaths.checkout], component: CheckoutPageComponent },
       { path: UserRoutingPaths[UserRoutingPaths.menu], loadChildren: () => import('./menu-page/menu-page.module').then(m => m.MenuPageModule) },
@@ -23,6 +25,7 @@ const routes: Routes = [
 
     ]
   },
+  { path: '**', pathMatch: 'full', redirectTo: userMainRoute }
 
 ];
 

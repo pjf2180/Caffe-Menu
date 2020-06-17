@@ -6,6 +6,7 @@ import { of, from, Observable, Subscriber } from 'rxjs';
 import * as AuthActions from '../actions/auth.actions';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { userMainRoute } from 'src/app/pageModules/user/user-routing.module';
 
 
 @Injectable()
@@ -20,7 +21,7 @@ export class AuthEffects {
           .pipe(
             map(data => {
               const userInfo = { email: data.user.email, uid: data.user.uid };
-              this.router.navigate(['user', 'menu']);
+              this.router.navigate([userMainRoute, 'menu']);
               return AuthActions.SignInSuccess({ data: userInfo })
             }),
             catchError(error => {
@@ -58,7 +59,7 @@ export class AuthEffects {
         from(this.authService.logout())
           .pipe(
             map(() => {
-              this.router.navigate(['user', 'home']);
+              this.router.navigate([userMainRoute,'home']);
               return AuthActions.signOutSuccess();
             }),
             catchError(error => {

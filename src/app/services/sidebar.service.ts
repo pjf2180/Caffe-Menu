@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as fromDashboardRouting from '../dashboard/dashboard-routing.module'
-import { UserRoutingPaths } from '../pageModules/user/user-routing.module';
+import { UserRoutingPaths, userMainRoute } from '../pageModules/user/user-routing.module';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,12 +22,12 @@ export class SidebarService {
       title: '',
       icon: '',
       links: [
-        { label: 'Menu', route: UserRoutingPaths[UserRoutingPaths.menu] },
-        { label: 'About', route: UserRoutingPaths[UserRoutingPaths.home] },
+        { label: 'Menu', route: `/${userMainRoute}/${UserRoutingPaths[UserRoutingPaths.menu]}` },
+        { label: 'About', route: `/${userMainRoute}/${UserRoutingPaths[UserRoutingPaths.home]}` },
+      ]
+    }
   ]
-}
-  ]
-constructor() { }
+  constructor() { }
 }
 export interface MenuGroup {
   title: string;

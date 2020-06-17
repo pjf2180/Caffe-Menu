@@ -17,6 +17,7 @@ img{
     max-width: 100%;
     height: auto;
     margin: auto;
+    max-height: 50vh;
 }
 .info{
     flex: 1;
@@ -48,12 +49,15 @@ img{
 }
 
 /* above 768px */
-@media(min-width: 769px){
+@media(min-width: 768px){
     img{
         max-width: 400px;
         border-radius: 50%;
     }
     .primary-container{
         padding-top: 2rem;
+    }
+    .main-container{
+        padding: 3rem;
     }
 }

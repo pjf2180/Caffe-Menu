@@ -7,6 +7,9 @@
     left: 0;
     right: 0;
 }
+nav-bar{
+    z-index: 4;
+}
 .outlet{
     padding-top: 2rem;
 }

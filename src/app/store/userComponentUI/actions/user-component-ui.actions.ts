@@ -19,3 +19,8 @@ export const togleDrawerState = createAction(
   '[UserComponentUI] Toggle Drawer'
 );
 
+
+export const setSearchCriteria = createAction(
+  '[SearchBar] Load SearchBars Success',
+  props<{ data: string }>()
+);

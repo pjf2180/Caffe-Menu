@@ -2,9 +2,8 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromMenu from '../reducers/menu.reducer';
 import { groupProductsByCategory } from '../utils.menu'
 import { ShoppingProduct } from 'src/app/models/shopping-product';
-import { authFeatureKey } from '../../auth/reducers/auth.reducer';
-import { selectSearchCriteria } from '../../search-bar/selectors/search-bar.selectors';
 
+import { selectSearchCriteria } from '../../userComponentUI/selectors/user-component-ui.selectors'
 export const selectMenuState = createFeatureSelector<fromMenu.State>(
   fromMenu.menuFeatureKey
 );

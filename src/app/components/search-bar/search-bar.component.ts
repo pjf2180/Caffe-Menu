@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/root-reducer';
-import { setSearchCriteria } from '../../store/search-bar/actions/search-bar.actions'
+import { setSearchCriteria } from '../../store/userComponentUI/actions/user-component-ui.actions'
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -23,6 +23,8 @@ export class SearchBarComponent implements OnInit {
     }
   }
   onSearchClick(){
-    this.store.dispatch(setSearchCriteria({ data: this.searchText }))
+    this.store.dispatch(setSearchCriteria({ data: this.searchText }));
+    this.searchText = '';
+    
   }
 }

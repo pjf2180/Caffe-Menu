@@ -5,6 +5,12 @@ export const selectUserComponentUIState = createFeatureSelector<fromUserComponen
   fromUserComponentUI.userComponentUIFeatureKey
 );
 
+export const selectSearchCriteria = createSelector(
+  selectUserComponentUIState,
+  uiState => uiState.searchCriteria
+);
+
+
 export const selectDrawerState = createSelector(
   selectUserComponentUIState,
   userUI => userUI.drawerStateOpen

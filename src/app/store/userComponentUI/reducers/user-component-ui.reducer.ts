@@ -4,11 +4,13 @@ import * as UserComponentUIActions from '../actions/user-component-ui.actions';
 export const userComponentUIFeatureKey = 'userComponentUI';
 
 export interface State {
-  drawerStateOpen: boolean
+  drawerStateOpen: boolean;
+  searchCriteria: string;
 }
 
 export const initialState: State = {
-  drawerStateOpen: false
+  drawerStateOpen: false,
+  searchCriteria: ''
 };
 
 
@@ -20,6 +22,13 @@ export const reducer = createReducer(
   on(UserComponentUIActions.loadUserComponentUIsFailure, (state, action) => state),
 
 
-  on(UserComponentUIActions.togleDrawerState,(state)=> ({...state, drawerStateOpen: !state.drawerStateOpen}))
+  on(UserComponentUIActions.togleDrawerState, (state) => ({ ...state, drawerStateOpen: !state.drawerStateOpen })),
+  on(UserComponentUIActions.setSearchCriteria, (state,action) => {
+    return {
+      ...state,
+      drawerStateOpen: false,
+      searchCriteria: action.data
+    }
+  }),
 );
 

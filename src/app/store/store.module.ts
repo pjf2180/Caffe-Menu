@@ -12,6 +12,7 @@ import { LocalStorageService } from '../services/localstorage.service';
 import { ROOT_STORAGE_KEYS, ROOT_LOCAL_STORAGE_KEY } from './metaReducers/tokens.metaReducers';
 import { storageMetaReducer } from './metaReducers/storage.metareducer';
 import { cartFeatureKey } from './cart/reducers/cart.reducer';
+import { SearchBarModule } from './search-bar/search-bar.module';
 
 // factory meta-reducer configuration function
 export function getMetaReducers(saveKeys: string[], localStorageKey: string, storageService: LocalStorageService)
@@ -27,7 +28,8 @@ export function getMetaReducers(saveKeys: string[], localStorageKey: string, sto
     EffectsModule.forRoot([AuthEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     MenuModule,
-    CartModule
+    CartModule,
+    SearchBarModule
   ],
   providers: [
     { provide: ROOT_STORAGE_KEYS, useValue: [cartFeatureKey] },

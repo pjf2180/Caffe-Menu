@@ -1,5 +1,5 @@
 <div class="search-bar">
     <app-fa-input icon="search">
-        <input type="text" >
+        <input type="text" [(ngModel)]="searchText" (ngModelChange)="onType()">
     </app-fa-input>
 </div>

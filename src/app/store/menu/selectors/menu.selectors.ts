@@ -3,6 +3,7 @@ import * as fromMenu from '../reducers/menu.reducer';
 import { groupProductsByCategory } from '../utils.menu'
 import { ShoppingProduct } from 'src/app/models/shopping-product';
 import { authFeatureKey } from '../../auth/reducers/auth.reducer';
+import { selectSearchCriteria } from '../../search-bar/selectors/search-bar.selectors';
 
 export const selectMenuState = createFeatureSelector<fromMenu.State>(
   fromMenu.menuFeatureKey
@@ -18,18 +19,19 @@ export const selectMenu = createSelector(
   (menuItems: ShoppingProduct[]) => groupProductsByCategory(menuItems)
 );
 
-export const selectItemsWithCriteria = createSelector(
+export const selectSearchItems = createSelector(
+  selectSearchCriteria,
   selectMenuItems,
-  (menuItems: ShoppingProduct[], props: { criteria: string, all?: boolean }) => {
-    if (props.all) {
-      return menuItems;
-    } else {
-      menuItems.filter(i => i.name.includes(props.criteria))
+  (searchCriteria, menuItems) => {
+    if(searchCriteria !== ''){
+      return menuItems.filter(i => i.name.includes(searchCriteria))
+    }else{
+      return menuItems
     }
   }
-)
+);
 
 export const selectMenuWithCriteria = createSelector(
-  selectItemsWithCriteria,
+  selectSearchItems,
   menuItems => groupProductsByCategory(menuItems)
 );

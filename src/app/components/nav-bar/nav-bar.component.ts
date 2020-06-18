@@ -2,8 +2,9 @@ import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angu
 import { SidebarService, MenuGroup } from 'src/app/services/sidebar.service';
 import { AppState } from 'src/app/store/root-reducer';
 import { Store } from '@ngrx/store';
-import { selectIsAuth, selectAuthState } from '../../store/auth/selectors/auth.selectors';
+import { selectIsAuth } from '../../store/auth/selectors/auth.selectors';
 import { Observable } from 'rxjs';
+import { togleDrawerState } from 'src/app/store/userComponentUI/actions/user-component-ui.actions';
 
 
 @Component({
@@ -12,9 +13,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  @Input() sideMenuState: boolean;
-  @Output() togleSideMenu: EventEmitter<boolean> = new EventEmitter();
   menuGroupVm: MenuGroup[];
   signedIn$: Observable<boolean>;
 
@@ -27,7 +25,7 @@ export class NavBarComponent implements OnInit {
     this.signedIn$ = this.store.select(selectIsAuth);
   }
   requestSideMenuToggle() {
-    this.togleSideMenu.emit(!this.sideMenuState)
+    this.store.dispatch(togleDrawerState())
   }
 
 

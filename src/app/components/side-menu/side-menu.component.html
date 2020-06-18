@@ -1,18 +1,15 @@
 <div class="menu-container">
-    <div class="groups-container">
-        
-        <app-search-bar goBtn="true" ></app-search-bar>
-
-        <div class="menu-group-container">
 
 
-            <div *ngFor="let group of menuGroupVm" class="group-container">
-                <mat-nav-list>
-                    <a mat-list-item color="primary" *ngFor="let menuItem of group.links"
-                        [routerLink]="[menuItem.route]" routerLinkActive="link-active">
-                        <div mat-line>{{menuItem.label}}</div>
-                    </a>
-                </mat-nav-list>
+    <div class="menu-section">
+
+        <app-search-bar goBtn="true"></app-search-bar>
+
+        <div *ngFor="let group of menuGroupVm" class="nav-btn-grp">
+
+            <div  class="nav-btns">
+                <button mat-button  *ngFor="let menuItem of group.links" (click)="onNavBtnClick(menuItem.route)">
+                    {{ menuItem.label }}</button>
             </div>
         </div>
 
@@ -32,11 +29,12 @@
             </div>
         </ng-template>
 
-
     </div>
 
 
-    <div class="bottom-toolbar">
-        <app-user-settings-dropdown ></app-user-settings-dropdown>
+    <div class="menu-section bottom-toolbar">
+        <app-user-settings-dropdown></app-user-settings-dropdown>
     </div>
+
+
 </div>

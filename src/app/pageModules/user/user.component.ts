@@ -4,7 +4,7 @@ import { AppState } from 'src/app/store/root-reducer';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { selectDrawerState } from '../../store/userComponentUI/selectors/user-component-ui.selectors'
-import { togleDrawerState } from '../../store/userComponentUI/actions/user-component-ui.actions'
+import { setDrawerState } from '../../store/userComponentUI/actions/user-component-ui.actions'
 
 @Component({
   selector: 'app-user',
@@ -15,7 +15,7 @@ export class UserComponent implements OnInit, OnDestroy {
 
   open: boolean = false;
   drawerState$: Observable<boolean>;
-  drawerStateSub : Subscription; 
+  drawerStateSub: Subscription;
   matSideNavMode: string = 'over';
   mobileQuery: MediaQueryList;
 
@@ -44,6 +44,6 @@ export class UserComponent implements OnInit, OnDestroy {
     // console.log('Opened');
   }
   onClose() {
-    // console.log('Closed');
+    this.store.dispatch(setDrawerState({ open: false }))
   }
 }

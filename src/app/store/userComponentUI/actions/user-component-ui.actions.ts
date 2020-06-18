@@ -18,7 +18,10 @@ export const loadUserComponentUIsFailure = createAction(
 export const togleDrawerState = createAction(
   '[UserComponentUI] Toggle Drawer'
 );
-
+export const setDrawerState = createAction(
+  '[UserComponentUI] Set Drawer state',
+  props<{ open: boolean }>()
+);
 
 export const setSearchCriteria = createAction(
   '[SearchBar] Load SearchBars Success',

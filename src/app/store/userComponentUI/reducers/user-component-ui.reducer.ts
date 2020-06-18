@@ -23,12 +23,13 @@ export const reducer = createReducer(
 
 
   on(UserComponentUIActions.togleDrawerState, (state) => ({ ...state, drawerStateOpen: !state.drawerStateOpen })),
-  on(UserComponentUIActions.setSearchCriteria, (state,action) => {
+  on(UserComponentUIActions.setSearchCriteria, (state, action) => {
     return {
       ...state,
       drawerStateOpen: false,
       searchCriteria: action.data
     }
   }),
+  on(UserComponentUIActions.setDrawerState, (state, action) => ({ ...state, drawerStateOpen: action.open })),
 );
 

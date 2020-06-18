@@ -6,22 +6,19 @@
     justify-content: space-between;
     overflow-x: hidden;
 }
-.groups-container{
+.menu-section{
     padding: 1.5rem;
 }
 
-.group-heading{
-    font-weight: bold;
-}
-mat-nav-list a{
-    font-weight: 500;
-    font-size: 20px;
+.nav-btn-grp{
+    margin-top: 1rem;
 }
 
-.button-group{ 
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
+.nav-btns button{
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: start;
 }
 
 .bottom-toolbar{

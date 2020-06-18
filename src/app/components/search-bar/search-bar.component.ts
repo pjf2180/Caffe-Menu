@@ -10,8 +10,8 @@ import { setSearchCriteria } from '../../store/userComponentUI/actions/user-comp
 export class SearchBarComponent implements OnInit {
 
   @Input() goBtn: boolean = false;
-
   searchText: string;
+  
   constructor(public store: Store<AppState>) { }
 
   ngOnInit() {

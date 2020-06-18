@@ -2,4 +2,5 @@
     <app-fa-input icon="search">
         <input type="text" [(ngModel)]="searchText" (ngModelChange)="onType()">
     </app-fa-input>
+    <button *ngIf="goBtn" mat-raised-button (click)="onSearchClick()">Go</button>
 </div>

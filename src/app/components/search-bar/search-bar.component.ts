@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/root-reducer';
 import { setSearchCriteria } from '../../store/search-bar/actions/search-bar.actions'
@@ -9,6 +9,7 @@ import { setSearchCriteria } from '../../store/search-bar/actions/search-bar.act
 })
 export class SearchBarComponent implements OnInit {
 
+  @Input() goBtn: boolean = false;
 
   searchText: string;
   constructor(public store: Store<AppState>) { }
@@ -17,6 +18,11 @@ export class SearchBarComponent implements OnInit {
   }
 
   onType() {
+    if(!this.goBtn){
+      this.store.dispatch(setSearchCriteria({ data: this.searchText }))
+    }
+  }
+  onSearchClick(){
     this.store.dispatch(setSearchCriteria({ data: this.searchText }))
   }
 }

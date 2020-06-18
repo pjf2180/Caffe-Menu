@@ -1,12 +1,13 @@
 .showcase{
     height: 50vh; 
-    background: url('../../../../assets/roman-kraft-P8zDQz8Y2Vc-unsplash.jpg')
+    background: url('https://firebasestorage.googleapis.com/v0/b/whereto-4882c.appspot.com/o/roman-kraft-P8zDQz8Y2Vc-unsplash.jpg?alt=media&token=2f0de89f-3901-4450-9d36-7ceff8a79568')
     center center/cover;  
+
 }
 .overlay{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.212);
+    background-color: rgba(0, 0, 0, 0.26);
 }
 .showcase-content{
     height: 100%;
@@ -17,26 +18,34 @@
     align-items: center;
     justify-content: center;
 }
-
 .lead{
     text-align: center;
 }
 .photo-footer{
     font-size: 0.5rem;
 }
+
+
 .what{
     margin-top: 3rem;
-    height: 40vh;
+    padding: 2rem;
+    height: fit-content;
+}
+.what h2{
+    margin-bottom: 3rem;
 }
 .items{
     display: flex;
     margin-top: 2rem;
     padding: 1rem;
 }
+.item{
+    padding: 1rem;
+}
 .footer{
     color: white;
     font-size: 0.5rem;
-    height: 50px;
+    height: 20px;
     background-color: black;
     width: 100%;
 }

@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="col-6 col-sm">
+        <div class="col-5 col-sm">
             <div class="quantity-controls ">
                 <div class="control-row">
                     <button mat-button class="incrementer" (click)="increment(-1)">&#10094;</button>
@@ -32,8 +32,10 @@
 
         </div>
 
-        <div class="col-1 col-sm clear">
-            <button mat-button class="clear-btn" (click)="clearItem()">&#10005;</button>
+        <div class="col-3 col-sm remove-col">
+            <div class="clear">
+                <button mat-stroked-button class="clear-btn" (click)="clearItem()">Remove</button>
+            </div>
         </div>
 
     </div>

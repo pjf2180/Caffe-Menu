@@ -4,9 +4,7 @@
     display: flex;
     justify-content: space-between;
 }
-:host ::ng-deep * {
-    font-size: smaller;
-}
+
 .product-info{
     height: 100%;
     display: flex;
@@ -30,44 +28,49 @@
     font-size: 1rem;
 }
 .quantity-controls{
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 2rem;
-
-}
-.quantity-controls input{
-    width: 40px;
-    height: 20px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    font-size: 1rem;
-    text-align: center;
-    padding: 5px;
+    font-size: 1.5rem;
+    overflow: hidden;
 }
 .control-row{
+    width: fit-content;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-.control-row .incrementer{
-    padding: 8px;
+
 }
 .control-row input{
-    min-width: 25px;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+}
+
+.control-row .incrementer{
+    padding: 8px;
 }
 .price{
     font-weight: bolder;
     color: green;
+    font-size: 1rem;
 }
-
+.remove-col{
+    padding: 0;
+}
 .clear{
-    display: flex;
-    justify-content: center;
+  width: 1005;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.clear-btn{
     padding: 0;
 }
 .mat-button{
     padding: 0;
-    min-width: 15px;
+    min-width: 20px;
 }

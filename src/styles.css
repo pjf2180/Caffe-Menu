@@ -8,7 +8,9 @@ a:visited{
   text-decoration: none;
   color: inherit;
 }
-
+*{
+  box-sizing: border-box;
+}
 button:focus{
     outline: none;
 }

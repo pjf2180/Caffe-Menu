@@ -4,7 +4,7 @@
 
     <div class="category-items">
         <div *ngFor="let item of category.items" class="category-item" (click)="onItemClick(item.id)">
-            <img src="https://source.unsplash.com/random" alt="Croissant">
+            <img [src]="item.imageUrl" alt="Croissant">
             <span>{{item.name}}</span>
         </div>
     </div>

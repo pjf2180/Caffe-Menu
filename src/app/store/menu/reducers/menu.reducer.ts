@@ -1,7 +1,6 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import * as MenuActions from '../actions/menu.actions';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
-import { ProductCategory } from 'src/app/models/product-category.models';
 
 export const menuFeatureKey = 'menu';
 

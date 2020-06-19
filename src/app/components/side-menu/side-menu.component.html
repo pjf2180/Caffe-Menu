@@ -3,7 +3,7 @@
 
     <div class="menu-section">
 
-        <app-search-bar goBtn="true"></app-search-bar>
+        <app-search-bar goBtn="true" (onSearch)="onSearch()"></app-search-bar>
 
         <div *ngFor="let group of menuGroupVm" class="nav-btn-grp">
 

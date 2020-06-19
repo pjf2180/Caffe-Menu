@@ -10,7 +10,7 @@ export interface State {
 
 export const initialState: State = {
   drawerStateOpen: false,
-  searchCriteria: ''
+  searchCriteria: 'HOHOH'
 };
 
 
@@ -26,10 +26,10 @@ export const reducer = createReducer(
   on(UserComponentUIActions.setSearchCriteria, (state, action) => {
     return {
       ...state,
-      drawerStateOpen: false,
       searchCriteria: action.data
     }
   }),
   on(UserComponentUIActions.setDrawerState, (state, action) => ({ ...state, drawerStateOpen: action.open })),
+  on(UserComponentUIActions.clearSearchCriteria, (state) => ({ ...state, searchCriteria: '' })),
 );
 

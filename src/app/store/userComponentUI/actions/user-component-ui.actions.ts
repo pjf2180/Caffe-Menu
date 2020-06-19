@@ -4,7 +4,6 @@ export const loadUserComponentUIs = createAction(
   '[UserComponentUI] Load UserComponentUIs'
 );
 
-
 export const loadUserComponentUIsSuccess = createAction(
   '[UserComponentUI] Load UserComponentUIs Success',
   props<{ data: any }>()
@@ -15,6 +14,8 @@ export const loadUserComponentUIsFailure = createAction(
   props<{ error: any }>()
 );
 
+
+
 export const togleDrawerState = createAction(
   '[UserComponentUI] Toggle Drawer'
 );
@@ -22,8 +23,10 @@ export const setDrawerState = createAction(
   '[UserComponentUI] Set Drawer state',
   props<{ open: boolean }>()
 );
-
 export const setSearchCriteria = createAction(
-  '[SearchBar] Load SearchBars Success',
+  '[UserComponentUI] Set Search criteria',
   props<{ data: string }>()
+);
+export const clearSearchCriteria = createAction(
+  '[UserComponentUI] Clear Search criteria'
 );

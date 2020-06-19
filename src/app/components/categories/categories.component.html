@@ -1,9 +1,23 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <h6 *ngIf="searchCriteria$ | async as str; else noSearch">
+                <div class="search-heading">
+                    <h5>Search term</h5>
+                    <button mat-mini-fab color="warn" (click)="clearSearchResults()">Clear</button>
+                </div>
+                <p>{{ str }}</p>
+            </h6>
+
             <h4 class="menu-header">Menu</h4>
-            <app-category-overview [category]="category" *ngFor="let category of categories | async">
-            </app-category-overview>
+            <div class="div" *ngIf="categories$ | async as categories">
+                <app-category-overview [category]="category" *ngFor="let category of categories ">
+                </app-category-overview>
+            </div>
+            <ng-template #noResults>
+                <h5>No Results found</h5>
+            </ng-template>
+
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { selectIsAuth } from 'src/app/store/auth/selectors/auth.selectors';
 import { Router } from '@angular/router';
 import { togleDrawerState } from '../../store/userComponentUI/actions/user-component-ui.actions'
+import { UserRoutingPaths } from 'src/app/pageModules/user/user-routing.module';
 
 @Component({
   selector: 'app-side-menu',
@@ -27,8 +28,9 @@ export class SideMenuComponent implements OnInit {
   }
 
   onNavBtnClick(route: string) {
-    this.router.navigate([route]).then(() => {
-      this.store.dispatch(togleDrawerState())
-    })
+    this.router.navigate([route]);
+  }
+  onSearch() {
+    this.router.navigate([UserRoutingPaths[UserRoutingPaths.menu]])
   }
 }

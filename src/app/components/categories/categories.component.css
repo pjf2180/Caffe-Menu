@@ -5,3 +5,12 @@
     overflow: scroll;
 }
 
+.search-heading{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+}
+.search-heading button{
+    margin-left: 10px;
+}

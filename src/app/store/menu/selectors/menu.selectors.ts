@@ -16,15 +16,16 @@ export const selectMenuItems = createSelector(
 export const selectMenu = createSelector(
   selectMenuItems,
   (menuItems: ShoppingProduct[]) => groupProductsByCategory(menuItems)
-);
+)
 
 export const selectSearchItems = createSelector(
   selectSearchCriteria,
   selectMenuItems,
   (searchCriteria, menuItems) => {
-    if(searchCriteria !== ''){
-      return menuItems.filter(i => i.name.includes(searchCriteria))
-    }else{
+    const loweredCriteria = searchCriteria.toLowerCase();
+    if (searchCriteria !== '') {
+      return menuItems.filter(i => i.name.toLowerCase().includes(loweredCriteria))
+    } else {
       return menuItems
     }
   }

@@ -1,4 +1,5 @@
-.menu{
+:host{
+    height: 84px;
     background-color: rgb(175, 175, 175);
     width: 100%;
     position: sticky;
@@ -7,9 +8,10 @@
    
     padding: 10px 20px;
     color: white;
-} 
+}
 
 .main-row{
+    height: 100%;
     display: flex; 
     justify-content: space-between;
     align-items: center;

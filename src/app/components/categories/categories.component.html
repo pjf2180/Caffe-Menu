@@ -1,13 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h6 *ngIf="searchCriteria$ | async as str; else noSearch">
-                <div class="search-heading">
-                    <h5>Search term</h5>
-                    <button mat-mini-fab color="warn" (click)="clearSearchResults()">Clear</button>
-                </div>
-                <p>{{ str }}</p>
-            </h6>
+
+            <div class="search-term" *ngIf="isSearching$ | async as isSearching;">
+                <h6 >
+                    <div class="search-heading">
+                        <h5>Search term</h5>
+                    </div>
+                    <app-search-bar [searchText]="searchCriteria$ | async"></app-search-bar>
+                </h6>
+            </div>
+
 
             <h4 class="menu-header">Menu</h4>
             <div class="div" *ngIf="categories$ | async as categories">

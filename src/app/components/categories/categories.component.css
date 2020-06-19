@@ -14,3 +14,6 @@
 .search-heading button{
     margin-left: 10px;
 }
+.search-term{
+    max-width: 310px;
+}

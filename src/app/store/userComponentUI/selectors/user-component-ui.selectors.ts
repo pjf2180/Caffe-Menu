@@ -15,3 +15,8 @@ export const selectDrawerState = createSelector(
   selectUserComponentUIState,
   userUI => userUI.drawerStateOpen
 );
+
+export const selectIsSearching = createSelector(
+  selectUserComponentUIState,
+  userUI => userUI.searching
+);

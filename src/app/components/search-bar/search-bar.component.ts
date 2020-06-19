@@ -11,7 +11,7 @@ import { setSearchCriteria } from '../../store/userComponentUI/actions/user-comp
 export class SearchBarComponent implements OnInit {
 
   @Input() goBtn: boolean = false;
-  searchText: string = '';
+  @Input() searchText: string = '';
   @Output() onSearch: EventEmitter<void> = new EventEmitter()
 
   constructor(public store: Store<AppState>) { }

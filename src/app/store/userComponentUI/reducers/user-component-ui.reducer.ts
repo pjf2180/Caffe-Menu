@@ -5,12 +5,14 @@ export const userComponentUIFeatureKey = 'userComponentUI';
 
 export interface State {
   drawerStateOpen: boolean;
+  searching: boolean;
   searchCriteria: string;
 }
 
 export const initialState: State = {
   drawerStateOpen: false,
-  searchCriteria: 'HOHOH'
+  searchCriteria: '',
+  searching: false
 };
 
 
@@ -26,7 +28,8 @@ export const reducer = createReducer(
   on(UserComponentUIActions.setSearchCriteria, (state, action) => {
     return {
       ...state,
-      searchCriteria: action.data
+      searchCriteria: action.data,
+      searching: true
     }
   }),
   on(UserComponentUIActions.setDrawerState, (state, action) => ({ ...state, drawerStateOpen: action.open })),

@@ -33,7 +33,7 @@
 
 
     <div class="menu-section bottom-toolbar">
-        <app-user-settings-dropdown></app-user-settings-dropdown>
+        <button *ngIf="signedIn$ | async" mat-raised-button (click)="signOut()"> Sign out</button>
     </div>
 
 

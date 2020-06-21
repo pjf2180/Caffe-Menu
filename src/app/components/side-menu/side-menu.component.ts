@@ -5,8 +5,9 @@ import { AppState } from 'src/app/store/root-reducer';
 import { Observable } from 'rxjs';
 import { selectIsAuth } from 'src/app/store/auth/selectors/auth.selectors';
 import { Router } from '@angular/router';
-import { togleDrawerState, setDrawerState } from '../../store/userComponentUI/actions/user-component-ui.actions'
+import { setDrawerState } from '../../store/userComponentUI/actions/user-component-ui.actions'
 import { UserRoutingPaths } from 'src/app/pageModules/user/user-routing.module';
+import { signOut } from '../../store/auth/actions/auth.actions'
 
 @Component({
   selector: 'app-side-menu',
@@ -20,7 +21,6 @@ export class SideMenuComponent implements OnInit {
 
   constructor(public sideBarService: SidebarService, public store: Store<AppState>, public router: Router) {
     this.menuGroupVm = sideBarService.userMenu;
-    console.log(this.menuGroupVm);
   }
 
   ngOnInit() {
@@ -33,5 +33,8 @@ export class SideMenuComponent implements OnInit {
   }
   onSearch() {
     this.router.navigate([UserRoutingPaths[UserRoutingPaths.menu]])
+  }
+  signOut() {
+    this.store.dispatch(signOut())
   }
 }

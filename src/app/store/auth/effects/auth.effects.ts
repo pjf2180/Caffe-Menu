@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap, mergeMap } from 'rxjs/operators';
-import { of, from, Observable, Subscriber } from 'rxjs';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { of, from } from 'rxjs';
 
 import * as AuthActions from '../actions/auth.actions';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { userMainRoute } from 'src/app/pageModules/user/user-routing.module';
+import { AppUser } from 'src/app/models/user.models';
 
 
 @Injectable()
@@ -17,12 +18,11 @@ export class AuthEffects {
 
       ofType(AuthActions.signIn),
       mergeMap((action) =>
-        from(this.authService.login(action.user, action.password))
+        from(this.authService.login(action.provider, action.user, action.password))
           .pipe(
-            map(data => {
-              const userInfo = { email: data.user.email, uid: data.user.uid };
+            map((appUser: AppUser) => {
               this.router.navigate([userMainRoute, 'menu']);
-              return AuthActions.SignInSuccess({ data: userInfo })
+              return AuthActions.SignInSuccess({ data: appUser })
             }),
             catchError(error => {
               return of(AuthActions.loadAuthsFailure({ error }))
@@ -37,10 +37,11 @@ export class AuthEffects {
       mergeMap((action) =>
         from(this.authService.isAuthenticated())
           .pipe(
-            map(authState => {
-              if (authState) {
+            map(firebaseUser => {
+              if (firebaseUser) {
+                const appUser = this.authService.userToAppUser(firebaseUser);
                 return AuthActions.SignInSuccess(
-                  { data: { email: authState.email, uid: authState.uid } });
+                  { data: appUser });
               } else {
                 throw Error('No auth found');
               }
@@ -59,7 +60,7 @@ export class AuthEffects {
         from(this.authService.logout())
           .pipe(
             map(() => {
-              this.router.navigate([userMainRoute,'home']);
+              this.router.navigate([userMainRoute, 'home']);
               return AuthActions.signOutSuccess();
             }),
             catchError(error => {

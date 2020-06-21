@@ -55,3 +55,8 @@ p{
     display: flex;
     justify-content: center;
 }
+.google-btn{
+    margin-top: 1rem;
+    background-color: #4c8bf5;
+    color: white;
+}

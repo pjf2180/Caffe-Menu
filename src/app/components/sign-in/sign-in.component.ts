@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService, AuthProvider } from 'src/app/services/auth.service';
 import { Store } from '@ngrx/store';
 import * as authActions from '../../store/auth/actions/auth.actions';
 import { AppState } from '../../store/root-reducer'
@@ -29,16 +29,10 @@ export class SignInComponent implements OnInit {
     console.log('Signin in')
     const email: string = this.formGroup.value.email;
     const password: string = this.formGroup.value.password;
-    this.store.dispatch(authActions.signIn({ user: email, password: password }));
-
-    // from(this.auth.login(email, password))
-    //   .subscribe(res => {
-    //     console.log(res);
-    //   })
-    // this.auth.login(email, password)
-    //   .then(result => this.router.navigate(['user']))
-    //   .catch(err => console.error(err));
-
+    this.store.dispatch(authActions.signIn({ provider: AuthProvider.emailPass, user: email, password: password }));
+  }
+  googleSignIn() {
+    this.store.dispatch(authActions.signIn({ provider: AuthProvider.google }));
   }
   redirectToRegister() {
     this.router.navigate(['register'], { relativeTo: this.route })

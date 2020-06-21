@@ -1,13 +1,15 @@
 import { createAction, props } from '@ngrx/store';
+import { AuthProvider } from 'src/app/services/auth.service';
+import { AppUser } from 'src/app/models/user.models';
 
 export const signIn = createAction(
   '[Auth] Sign in',
-  props<{ user: string, password: string }>()
+  props<{ provider: AuthProvider, user?: string, password?: string }>()
 );
 
 export const SignInSuccess = createAction(
   '[Auth] Sign in Success',
-  props<{ data: any }>()
+  props<{ data: AppUser }>()
 );
 
 export const loadAuthsFailure = createAction(

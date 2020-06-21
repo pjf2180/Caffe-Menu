@@ -18,7 +18,6 @@ export class NavBarComponent implements OnInit {
 
   constructor(public sideBarService: SidebarService, public store: Store<AppState>) {
     this.menuGroupVm = sideBarService.userMenu;
-    console.log(this.menuGroupVm);
   }
 
   ngOnInit() {

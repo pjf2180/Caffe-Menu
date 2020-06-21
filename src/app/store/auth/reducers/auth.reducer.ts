@@ -1,10 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as AuthActions from '../actions/auth.actions';
+import { AppUser } from 'src/app/models/user.models';
 
 export const authFeatureKey = 'auth';
 
 export interface State {
-  user: { email: string, uid: string }
+  user: AppUser
 }
 
 export const initialState: State = {

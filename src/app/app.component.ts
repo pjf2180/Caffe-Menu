@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
       filter((e: RouterEvent) => (e instanceof NavigationEnd))
     ).subscribe((e: RouterEvent) => {
-      console.log(e);
       this.store.dispatch(setDrawerState({ open: false }))
     });
   }

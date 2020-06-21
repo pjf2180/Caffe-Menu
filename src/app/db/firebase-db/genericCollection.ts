@@ -1,6 +1,7 @@
 import { IFirestoreCollection, IFireStoreCollectionItem } from './firestoreCollection.firebase-db';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { NgZone } from '@angular/core';
 
 
 export type TransformFunction<T> = (docData: T) => firebase.firestore.UpdateData
@@ -28,12 +29,11 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
         this.collectionReference.doc(`${uuid}`).update({ active: false });
     }
     getById(id: string) {
-        return this.collectionReference.ref.where("id", "==", id)
+        return this.collectionReference.ref.doc(id)
             .get()
-            .then(querySnapshot => {
+            .then(docSnapshot => {
+                return docSnapshot.data()
                 
-                const result = querySnapshot.docs[0];
-                return result.data();
             });
     }
     get() {
@@ -54,8 +54,8 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     addBatch(arr: { docRef: DocumentReference, item: any }[]) {
         const batch = this.batch()
         arr.forEach(batchItem => {
-            
-            batch.set(batchItem.docRef, { ...batchItem.item, id: batchItem.docRef.id});
+
+            batch.set(batchItem.docRef, { ...batchItem.item, id: batchItem.docRef.id });
         })
         return batch.commit();
     }

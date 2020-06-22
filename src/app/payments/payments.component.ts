@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StripeCheckoutLoader, StripeCheckoutHandler } from 'ng-stripe-checkout';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
@@ -16,7 +17,7 @@ export class PaymentsComponent implements OnInit {
 
   public ngAfterViewInit() {
     this.stripeCheckoutLoader.createHandler({
-      key: 'pk_test_HWgXCcBi72pfuf0EExzjXmn000tWtSFIAP',
+      key: environment.stripeKey,
     }).then((handler: StripeCheckoutHandler) => {
       this.stripeCheckoutHandler = handler;
     });

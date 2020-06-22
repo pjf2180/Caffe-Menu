@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import * as UserComponentUIActions from '../actions/user-component-ui.actions';
 
 export const userComponentUIFeatureKey = 'userComponentUI';
@@ -16,7 +16,7 @@ export const initialState: State = {
 };
 
 
-export const reducer = createReducer(
+const featureReducer = createReducer(
   initialState,
 
   on(UserComponentUIActions.loadUserComponentUIs, state => state),
@@ -36,3 +36,6 @@ export const reducer = createReducer(
   on(UserComponentUIActions.clearSearchCriteria, (state) => ({ ...state, searchCriteria: '' })),
 );
 
+export function reducer(state: State | undefined, action: Action) {
+  return featureReducer(state, action);
+}

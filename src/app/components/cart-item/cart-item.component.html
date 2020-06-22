@@ -24,7 +24,7 @@
             <div class="quantity-controls ">
                 <div class="control-row">
                     <button mat-button class="incrementer" (click)="increment(-1)">&#10094;</button>
-                    <input type="number" [(ngModel)]="quantity" (ngModelChange)="onQtyChange(event$)">
+                    <input type="number" [(ngModel)]="quantity" (ngModelChange)="onQtyChange()">
                     <button mat-button class="incrementer" (click)="increment(1)">&#10095;</button>
                 </div>
 

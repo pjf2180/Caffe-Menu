@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import * as CartActions from '../actions/cart.actions';
 import { CartItem } from '../../../models/cart-item.models'
 import { addItemToList, setItemQuantity, clearItem } from '../utils.cart'
@@ -12,7 +12,7 @@ export const initialState: State = {
   items: []
 };
 
-export const reducer = createReducer(
+export const featureReducer = createReducer(
   initialState,
 
   on(CartActions.addToCart, (state, action): State => {
@@ -42,3 +42,7 @@ export const reducer = createReducer(
 
 );
 
+
+export function reducer(state: State | undefined, action: Action) {
+  return featureReducer(state, action);
+}

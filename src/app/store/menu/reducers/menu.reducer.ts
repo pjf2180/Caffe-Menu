@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 import * as MenuActions from '../actions/menu.actions';
 import { ShoppingProduct } from 'src/app/models/shopping-product';
 
@@ -13,7 +13,7 @@ export const initialState: State = {
 };
 
 
-export const reducer = createReducer(
+const featureReducer = createReducer(
   initialState,
 
   on(MenuActions.loadMenus, state => state),
@@ -22,3 +22,6 @@ export const reducer = createReducer(
 
 );
 
+export function reducer(state: State | undefined, action: Action) {
+  return featureReducer(state, action);
+}

@@ -13,7 +13,7 @@ export const initialState: State = {
 };
 
 
-export const reducer = createReducer(
+export const featureReducer = createReducer(
   initialState,
 
   on(AuthActions.signIn, state => {
@@ -30,9 +30,9 @@ export const reducer = createReducer(
 
   on(AuthActions.checkAuth, (state, action) => state),
 
-  on(AuthActions.signOut, (state, action) => initialState),
-
-
-
+  on(AuthActions.signOut, (state, action) => initialState)
 );
 
+export function reducer(state: State | undefined, action: Action) {
+  return featureReducer(state, action);
+}

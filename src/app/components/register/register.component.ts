@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidationErrors, AbstractControl, ValidatorFn } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 @Component({
@@ -16,21 +16,27 @@ export class RegisterComponent implements OnInit {
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    })
+      password: new FormControl('', Validators.required),
+      confirmPassword: new FormControl('', Validators.required),
+    }, this.forbiddenNameValidator())
+
   }
 
   ngOnInit() {
   }
   register() {
-    console.log(this.formGroup.value);
-    const email = this.formGroup.value.email;
-    const firstname = this.formGroup.value.firstname;
-    const lastname = this.formGroup.value.lastname;
-    const password = this.formGroup.value.password;
+    if (this.formGroup.invalid) { return }
+    const { email, firstname, lastname, password } = this.formGroup.value;
     this.auth.createAccount(email, password, firstname, lastname)
       .then(() => this.router.navigate(['signin']))
       .catch(err => console.error(err));
+  }
+
+  forbiddenNameValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: boolean } | null => {
+      const { password, confirmPassword } = control.value;
+      return password === confirmPassword ? null : { passwordmatch: true };
+    };
   }
 
 }

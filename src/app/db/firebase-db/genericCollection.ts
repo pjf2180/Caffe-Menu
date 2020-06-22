@@ -33,8 +33,7 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
             .get()
             .then(docSnapshot => {
                 return docSnapshot.data() as T
-            })
-            .catch(reason => undefined);
+            });
     }
     get() {
         return this.collectionReference.snapshotChanges()

@@ -27,7 +27,15 @@
                 <mat-label>Password</mat-label>
                 <input type="password" matInput placeholder="Type your password" formControlName="password">
             </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Confirm password</mat-label>
+                <input type="password" matInput placeholder="Confirm your password" formControlName="confirmPassword">
+            </mat-form-field>
         </div>
+
+        <div *ngIf="formGroup.errors?.passwordmatch">
+            <sup>*</sup>Pasword and confirm passwords don't match
+          </div>
         
         <button type="submit" mat-flat-button color="primary">Register</button>
 

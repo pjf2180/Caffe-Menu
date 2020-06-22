@@ -16,10 +16,10 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     createId() {
         return this.afs.createId();
     }
-    add(item: T) {
+    add(item: T, id?: string) {
         const newId = this.afs.createId();
-        const newDoc = this.afs.collection(this.collectionName).doc(newId);
-        return newDoc.set({ ...item, id: newId });
+        const newDoc = this.afs.collection(this.collectionName).doc(id || newId);
+        return newDoc.set({ ...item, id: id || newId });
         // return this.afs.collection(this.collectionName).add(item);
     }
     update(item: T) {
@@ -28,13 +28,13 @@ export class GenericCollection<T> implements IFirestoreCollection<T>{
     remove(uuid: string) {
         this.collectionReference.doc(`${uuid}`).update({ active: false });
     }
-    getById(id: string) {
+    getById(id: string): Promise<T> {
         return this.collectionReference.ref.doc(id)
             .get()
             .then(docSnapshot => {
-                return docSnapshot.data()
-                
-            });
+                return docSnapshot.data() as T
+            })
+            .catch(reason => undefined);
     }
     get() {
         return this.collectionReference.snapshotChanges()

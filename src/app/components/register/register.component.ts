@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,10 +25,10 @@ export class RegisterComponent implements OnInit {
   register() {
     console.log(this.formGroup.value);
     const email = this.formGroup.value.email;
-    const password = this.formGroup.value.password;
     const firstname = this.formGroup.value.firstname;
     const lastname = this.formGroup.value.lastname;
-    this.auth.createAccount(email, password)
+    const password = this.formGroup.value.password;
+    this.auth.createAccount(email, password, firstname, lastname)
       .then(() => this.router.navigate(['signin']))
       .catch(err => console.error(err));
   }

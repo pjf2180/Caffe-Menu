@@ -11,9 +11,8 @@
 
     <div *ngIf="cartTotal | async as total" class="total-row">
         <div class="cart-total">
-            <h6>Total</h6>
-            <h5>$ {{ total }}</h5>
+            <h5> Total: $ {{ total }}</h5>
         </div>
+        <app-payments [amount]="total"></app-payments>
     </div>
-
 </div>
